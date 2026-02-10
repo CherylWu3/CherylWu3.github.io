@@ -502,13 +502,13 @@ img {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 24px 80px;
-  columns: 2;
-  column-gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
 }
 
 .flip-card {
-  margin: 0 0 20px;
-  break-inside: avoid;
   perspective: 1000px;
   cursor: pointer;
 }
@@ -556,8 +556,6 @@ img {
 }
 
 .gallery-item-static {
-  margin: 0 0 20px;
-  break-inside: avoid;
 }
 
 .gallery-item-static img {
@@ -642,7 +640,7 @@ img {
   }
 
   .gallery-container {
-    columns: 1;
+    grid-template-columns: 1fr;
   }
 }
 
