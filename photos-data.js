@@ -13,13 +13,13 @@ const PHOTOS = [
 ,
   {"src": "photos/DSC00754.jpg", "alt": "DSC00754", "note": ""}
 ,
-  {"src": "photos/fuji-1.jpg", "alt": "fuji-1", "note": ""}
+  {"src": "photos/fuji-1.jpg", "alt": "fuji-1", "note": "Fuji Mountain"}
 ,
-  {"src": "photos/fuji-11.jpg", "alt": "fuji-11", "note": ""}
+  {"src": "photos/fuji-11.jpg", "alt": "fuji-11", "note": "Fuji Mountain"}
 ,
-  {"src": "photos/fuji-4.jpg", "alt": "fuji-4", "note": ""}
+  {"src": "photos/fuji-4.jpg", "alt": "fuji-4", "note": "Fuji Mountain"}
 ,
-  {"src": "photos/fuji-8.jpg", "alt": "fuji-8", "note": ""}
+  {"src": "photos/fuji-8.jpg", "alt": "fuji-8", "note": "Fuji Mountain"}
 ,
   {"src": "photos/hero.jpg", "alt": "hero", "note": ""}
 ,
