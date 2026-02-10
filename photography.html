@@ -75,33 +75,44 @@
     if (typeof PHOTOS !== 'undefined' && PHOTOS.length > 0) {
       gallery.innerHTML = '';
       PHOTOS.forEach(photo => {
-        const card = document.createElement('div');
-        card.className = 'flip-card';
-        card.addEventListener('click', () => card.classList.toggle('flipped'));
+        const hasNote = photo.note && photo.note.trim() !== '';
 
-        const inner = document.createElement('div');
-        inner.className = 'flip-card-inner';
+        if (hasNote) {
+          const card = document.createElement('div');
+          card.className = 'flip-card';
+          card.addEventListener('click', () => card.classList.toggle('flipped'));
 
-        // Front: the photo
-        const front = document.createElement('div');
-        front.className = 'flip-card-front';
-        const img = document.createElement('img');
-        img.src = photo.src;
-        img.alt = photo.alt || '';
-        img.loading = 'lazy';
-        front.appendChild(img);
+          const inner = document.createElement('div');
+          inner.className = 'flip-card-inner';
 
-        // Back: notes
-        const back = document.createElement('div');
-        back.className = 'flip-card-back';
-        const note = document.createElement('p');
-        note.textContent = photo.note || 'Click to flip back';
-        back.appendChild(note);
+          const front = document.createElement('div');
+          front.className = 'flip-card-front';
+          const img = document.createElement('img');
+          img.src = photo.src;
+          img.alt = photo.alt || '';
+          img.loading = 'lazy';
+          front.appendChild(img);
 
-        inner.appendChild(front);
-        inner.appendChild(back);
-        card.appendChild(inner);
-        gallery.appendChild(card);
+          const back = document.createElement('div');
+          back.className = 'flip-card-back';
+          const note = document.createElement('p');
+          note.textContent = photo.note;
+          back.appendChild(note);
+
+          inner.appendChild(front);
+          inner.appendChild(back);
+          card.appendChild(inner);
+          gallery.appendChild(card);
+        } else {
+          const figure = document.createElement('figure');
+          figure.className = 'gallery-item-static';
+          const img = document.createElement('img');
+          img.src = photo.src;
+          img.alt = photo.alt || '';
+          img.loading = 'lazy';
+          figure.appendChild(img);
+          gallery.appendChild(figure);
+        }
       });
     } else {
       gallery.innerHTML = '<p>No photos yet. Add images to the <code>photos/</code> folder and double-click <code>update-photos.command</code>.</p>';

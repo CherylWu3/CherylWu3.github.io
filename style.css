@@ -555,6 +555,17 @@ img {
   line-height: 1.6;
 }
 
+.gallery-item-static {
+  margin: 0 0 20px;
+  break-inside: avoid;
+}
+
+.gallery-item-static img {
+  width: 100%;
+  display: block;
+  border-radius: 4px;
+}
+
 .gallery-loading {
   color: #888;
   font-style: italic;
