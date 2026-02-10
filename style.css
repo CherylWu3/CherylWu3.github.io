@@ -506,26 +506,57 @@ img {
   column-gap: 20px;
 }
 
-.gallery-item {
+.flip-card {
   margin: 0 0 20px;
   break-inside: avoid;
+  perspective: 1000px;
+  cursor: pointer;
 }
 
-.gallery-item img {
-  width: 100%;
+.flip-card-inner {
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  backface-visibility: hidden;
   border-radius: 4px;
+  overflow: hidden;
+}
+
+.flip-card-front img {
+  width: 100%;
   display: block;
+  border-radius: 4px;
+}
+
+.flip-card-back {
+  position: absolute;
+  inset: 0;
+  transform: rotateY(180deg);
+  background: #1a2744;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.flip-card-back p {
+  color: #c8d1e0;
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  text-align: center;
+  line-height: 1.6;
 }
 
 .gallery-loading {
   color: #888;
-  font-style: italic;
-}
-
-.gallery-item figcaption {
-  font-size: 0.85rem;
-  color: #777;
-  margin-top: 8px;
   font-style: italic;
 }
 

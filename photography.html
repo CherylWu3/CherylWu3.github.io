@@ -75,14 +75,33 @@
     if (typeof PHOTOS !== 'undefined' && PHOTOS.length > 0) {
       gallery.innerHTML = '';
       PHOTOS.forEach(photo => {
-        const figure = document.createElement('figure');
-        figure.className = 'gallery-item';
+        const card = document.createElement('div');
+        card.className = 'flip-card';
+        card.addEventListener('click', () => card.classList.toggle('flipped'));
+
+        const inner = document.createElement('div');
+        inner.className = 'flip-card-inner';
+
+        // Front: the photo
+        const front = document.createElement('div');
+        front.className = 'flip-card-front';
         const img = document.createElement('img');
         img.src = photo.src;
         img.alt = photo.alt || '';
         img.loading = 'lazy';
-        figure.appendChild(img);
-        gallery.appendChild(figure);
+        front.appendChild(img);
+
+        // Back: notes
+        const back = document.createElement('div');
+        back.className = 'flip-card-back';
+        const note = document.createElement('p');
+        note.textContent = photo.note || 'Click to flip back';
+        back.appendChild(note);
+
+        inner.appendChild(front);
+        inner.appendChild(back);
+        card.appendChild(inner);
+        gallery.appendChild(card);
       });
     } else {
       gallery.innerHTML = '<p>No photos yet. Add images to the <code>photos/</code> folder and double-click <code>update-photos.command</code>.</p>';
