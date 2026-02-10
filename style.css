@@ -502,10 +502,13 @@ img {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 24px 80px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
-  align-items: start;
+}
+
+.gallery-container > * {
+  width: calc(50% - 10px);
 }
 
 .flip-card {
@@ -653,8 +656,8 @@ img {
     min-width: auto;
   }
 
-  .gallery-container {
-    grid-template-columns: 1fr;
+  .gallery-container > * {
+    width: 100%;
   }
 }
 
