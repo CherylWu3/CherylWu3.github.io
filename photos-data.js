@@ -58,5 +58,19 @@ const PHOTOS = [
   {"src": "photos/j3.jpg", "alt": "j3", "note": ""}
 ,
   {"src": "photos/j4.jpg", "alt": "j4", "note": ""}
+,
+  {"src": "photos/000004.jpg", "alt": "000004", "note": ""}
+,
+  {"src": "photos/000004_k.jpg", "alt": "000004_k", "note": ""}
+,
+  {"src": "photos/000077630004.jpg", "alt": "000077630004", "note": ""}
+,
+  {"src": "photos/2024-10-16-0001.jpg", "alt": "2024-10-16-0001", "note": ""}
+,
+  {"src": "photos/2024-10-16-0002%20chg.jpg", "alt": "2024-10-16-0002 chg", "note": ""}
+,
+  {"src": "photos/2024-10-16-0003.jpg", "alt": "2024-10-16-0003", "note": ""}
+,
+  {"src": "photos/2024-10-16-0006.jpg", "alt": "2024-10-16-0006", "note": ""}
 
 ];
