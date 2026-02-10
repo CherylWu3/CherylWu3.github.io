@@ -74,7 +74,15 @@
 
     if (typeof PHOTOS !== 'undefined' && PHOTOS.length > 0) {
       gallery.innerHTML = '';
-      PHOTOS.forEach(photo => {
+      const col1 = document.createElement('div');
+      col1.className = 'gallery-column';
+      const col2 = document.createElement('div');
+      col2.className = 'gallery-column';
+      gallery.appendChild(col1);
+      gallery.appendChild(col2);
+
+      PHOTOS.forEach((photo, i) => {
+        const col = i % 2 === 0 ? col1 : col2;
         const hasNote = photo.note && photo.note.trim() !== '';
 
         if (hasNote) {
@@ -95,7 +103,7 @@
           overlay.appendChild(note);
           card.appendChild(overlay);
 
-          gallery.appendChild(card);
+          col.appendChild(card);
         } else {
           const figure = document.createElement('figure');
           figure.className = 'gallery-item-static';
@@ -104,7 +112,7 @@
           img.alt = photo.alt || '';
           img.loading = 'lazy';
           figure.appendChild(img);
-          gallery.appendChild(figure);
+          col.appendChild(figure);
         }
       });
     } else {
