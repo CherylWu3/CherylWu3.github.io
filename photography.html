@@ -80,28 +80,21 @@
         if (hasNote) {
           const card = document.createElement('div');
           card.className = 'flip-card';
-          card.addEventListener('click', () => card.classList.toggle('flipped'));
+          card.addEventListener('click', () => card.classList.toggle('show-note'));
 
-          const inner = document.createElement('div');
-          inner.className = 'flip-card-inner';
-
-          const front = document.createElement('div');
-          front.className = 'flip-card-front';
           const img = document.createElement('img');
           img.src = photo.src;
           img.alt = photo.alt || '';
           img.loading = 'lazy';
-          front.appendChild(img);
+          card.appendChild(img);
 
-          const back = document.createElement('div');
-          back.className = 'flip-card-back';
+          const overlay = document.createElement('div');
+          overlay.className = 'flip-card-note';
           const note = document.createElement('p');
           note.textContent = photo.note;
-          back.appendChild(note);
+          overlay.appendChild(note);
+          card.appendChild(overlay);
 
-          inner.appendChild(front);
-          inner.appendChild(back);
-          card.appendChild(inner);
           gallery.appendChild(card);
         } else {
           const figure = document.createElement('figure');
