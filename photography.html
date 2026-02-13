@@ -99,7 +99,7 @@
           const overlay = document.createElement('div');
           overlay.className = 'flip-card-note';
           const note = document.createElement('p');
-          note.textContent = photo.note;
+          note.innerHTML = photo.note;
           overlay.appendChild(note);
           card.appendChild(overlay);
 
