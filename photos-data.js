@@ -89,5 +89,9 @@ const PHOTOS = [
 ,
   {"src": "photos/DSC06052.jpg", "alt": "DSC06052", "note": "夜竹 Night Bamboo<br>Kumamoto"}
 ,
+  {"src": "photos/DSC06094.jpg", "alt": "DSC06094", "note": "夜竹 Night Bamboo<br>Kumamoto"}
+,
+  {"src": "photos/DSC06122.jpg", "alt": "DSC06122", "note": "夜竹 Night Bamboo<br>Kumamoto"}
+,
   {"src": "photos/j4.jpg", "alt": "j4", "note": "富士静か<br>小舟滑りて<br>湖に星"}
 ];
