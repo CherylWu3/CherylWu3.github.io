@@ -71,6 +71,19 @@ const PHOTOS = [
 ,
   {"src": "photos/j3.jpg", "alt": "j3", "note": "Night Fuji Mountain"}
 ,
+  {"src": "photos/2024-03-29-0002.jpg", "alt": "2024-03-29-0002", "note": "Sakura in DC"}
+,
+  {"src": "photos/DSC05903.jpg", "alt": "DSC05903", "note": "夜竹 Night Bamboo<br>Kumamoto"}
+,
+  {"src": "photos/DSC05913.jpg", "alt": "DSC05913", "note": "夜竹 Night Bamboo<br>Kumamoto"}
+,
+  {"src": "photos/DSC06071.jpg", "alt": "DSC06071", "note": "夜竹 Night Bamboo<br>Kumamoto"}
+,
+  {"src": "photos/DSC05737.jpg", "alt": "DSC05737", "note": "日竹 Daytime Bamboo<br>Kumamoto"}
+,
+  {"src": "photos/DSC05669.jpg", "alt": "DSC05669", "note": "夜竹 Night Bamboo<br>Kumamoto"}
+,
+  {"src": "photos/DSC05691.jpg", "alt": "DSC05691", "note": "竹影 Bamboo Shadow<br>Kumamoto"}
+,
   {"src": "photos/j4.jpg", "alt": "j4", "note": "富士静か<br>小舟滑りて<br>湖に星"}
-
 ];
