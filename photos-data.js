@@ -1,11 +1,11 @@
 const PHOTOS = [
-  {"src": "photos/000004.jpg", "alt": "000004", "note": ""}
+  {"src": "photos/000004.jpg", "alt": "000004", "note": "江の島や<br>神の光に<br>波光る"}
 ,
-  {"src": "photos/000004_k.jpg", "alt": "000004_k", "note": ""}
+  {"src": "photos/000004_k.jpg", "alt": "000004_k", "note": "Hitotsubashi University"}
 ,
-  {"src": "photos/000032.jpg", "alt": "000032", "note": ""}
+  {"src": "photos/000032.jpg", "alt": "000032", "note": "江の島"}
 ,
-  {"src": "photos/000039.jpg", "alt": "000039", "note": ""}
+  {"src": "photos/000039.jpg", "alt": "000039", "note": "江の島"}
 ,
   {"src": "photos/000077630004.jpg", "alt": "000077630004", "note": ""}
 ,
@@ -21,9 +21,9 @@ const PHOTOS = [
 ,
   {"src": "photos/2024-10-16-0006.jpg", "alt": "2024-10-16-0006", "note": ""}
 ,
-  {"src": "photos/3.jpg", "alt": "3", "note": ""}
+  {"src": "photos/3.jpg", "alt": "3", "note": "Duomo di Milano"}
 ,
-  {"src": "photos/9.jpg", "alt": "9", "note": ""}
+  {"src": "photos/9.jpg", "alt": "9", "note": "Duomo di Milano"}
 ,
   {"src": "photos/DSC00754.jpg", "alt": "DSC00754", "note": ""}
 ,
@@ -33,7 +33,7 @@ const PHOTOS = [
 ,
   {"src": "photos/fuji-4.jpg", "alt": "fuji-4", "note": "Fuji Mountain"}
 ,
-  {"src": "photos/fuji-8.jpg", "alt": "fuji-8", "note": "Fuji Mountain"}
+  {"src": "photos/fuji-8.jpg", "alt": "fuji-8", "note": "富士静か<br>小舟滑りて<br>湖に星"}
 ,
   {"src": "photos/hero.jpg", "alt": "hero", "note": ""}
 ,
@@ -71,6 +71,6 @@ const PHOTOS = [
 ,
   {"src": "photos/j3.jpg", "alt": "j3", "note": ""}
 ,
-  {"src": "photos/j4.jpg", "alt": "j4", "note": ""}
+  {"src": "photos/j4.jpg", "alt": "j4", "note": "富士静か<br>小舟滑りて<br>湖に星"}
 
 ];
