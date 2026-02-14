@@ -35,7 +35,7 @@ const PHOTOS = [
 ,
   {"src": "photos/fuji-8.jpg", "alt": "fuji-8", "note": "富士静か<br>小舟滑りて<br>星浮かぶ"}
 ,
-  {"src": "photos/j4.jpg", "alt": "j4", "note": "富士静か<br>小舟滑りて<br>湖に星"}
+  {"src": "photos/j4.jpg", "alt": "j4", "note": "富士静か<br>小舟滑りて<br>星浮かぶ"}
 ,
   {"src": "photos/hero.jpg", "alt": "hero", "note": "緑川<br>夜に響きて<br>霧島や"}
 ,
