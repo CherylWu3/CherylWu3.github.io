@@ -35,6 +35,8 @@ const PHOTOS = [
 ,
   {"src": "photos/fuji-8.jpg", "alt": "fuji-8", "note": "富士静か<br>小舟滑りて<br>星浮かぶ"}
 ,
+  {"src": "photos/j4.jpg", "alt": "j4", "note": "富士静か<br>小舟滑りて<br>湖に星"}
+,
   {"src": "photos/hero.jpg", "alt": "hero", "note": "緑川<br>夜に響きて<br>霧島や"}
 ,
   {"src": "photos/img20250906_0340%20copy.jpg", "alt": "img20250906_0340 copy", "note": "Alaska"}
@@ -93,5 +95,11 @@ const PHOTOS = [
 ,
   {"src": "photos/DSC06122.jpg", "alt": "DSC06122", "note": "夜竹 Night Bamboo<br>Kumamoto"}
 ,
-  {"src": "photos/j4.jpg", "alt": "j4", "note": "富士静か<br>小舟滑りて<br>湖に星"}
+  {"src": "photos/DSC06837.jpg", "alt": "DSC06837", "note": "Jeju"}
+,
+  {"src": "photos/DSC07209.jpg", "alt": "DSC07209", "note": "Jeju"}
+,
+  {"src": "photos/DSC07201.jpg", "alt": "DSC07201", "note": "Jeju"}
+,
+  {"src": "photos/DSC06790.jpg", "alt": "DSC06790", "note": "Jeju"}
 ];
