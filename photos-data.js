@@ -1,4 +1,16 @@
 const PHOTOS = [
+    {"src": "photos/CW87286-R3-E055.jpg", "alt": "CW87286-R3-E055", "note": "Blue Springs <br> swimming seaweeds"}
+,
+    {"src": "photos/B9942224.jpg", "alt": "B9942224", "note": "Rohan from LOTR"}
+,
+    {"src": "photos/CW87286-R1-037-17.jpg", "alt": "CW87286-R1-037-17", "note": "Underhill"}
+,
+    {"src": "photos/CW87286-R3-E049.jpg", "alt": "CW87286-R3-E049", "note": "Auckland"}
+,
+    {"src": "photos/DSC08800.jpg", "alt": "DSC08800", "note": "London"}
+,
+    {"src": "photos/DSC08067.jpg", "alt": "DSC08067", "note": "London"}
+,
   {"src": "photos/000004.jpg", "alt": "000004", "note": "江の島や<br>神の光に<br>波光る"}
 ,
   {"src": "photos/000004_k.jpg", "alt": "000004_k", "note": "Hitotsubashi University"}
