@@ -1,4 +1,6 @@
 const PHOTOS = [
+    {"src": "photos/CW87286-R3-E058.jpg", "alt": "CW87286-R3-E058", "note": "Blue Springs"}
+,
     {"src": "photos/CW87286-R3-E055.jpg", "alt": "CW87286-R3-E055", "note": "Blue Springs <br> swimming seaweeds"}
 ,
     {"src": "photos/B9942224.jpg", "alt": "B9942224", "note": "Rohan from LOTR"}
