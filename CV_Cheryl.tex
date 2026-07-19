@@ -1,0 +1,116 @@
+% CV — Cheryl Wu
+% Recreated from CV_Cheryl.pdf (Mar 26, 2026) — the Overleaf-synced .tex was empty locally.
+\documentclass[10pt]{article}
+
+\usepackage[margin=0.75in,top=0.7in,bottom=0.9in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{mathpazo}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{marvosym}
+\usepackage[colorlinks=true,urlcolor=RoyalBlue,linkcolor=RoyalBlue]{hyperref}
+\definecolor{RoyalBlue}{RGB}{25,25,112}
+
+\setlength{\parindent}{0pt}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\small \thepage\ of \pageref*{LastPage}}
+
+% Left label column + right content column
+\newlength{\labelcol}\setlength{\labelcol}{1.15in}
+\newlength{\contentcol}\setlength{\contentcol}{\dimexpr\textwidth-\labelcol-0.15in\relax}
+\newcommand{\cvsection}[2]{%
+  \par\vspace{10pt}%
+  \begin{minipage}[t]{\labelcol}\textsc{#1}\end{minipage}\hfill
+  \begin{minipage}[t]{\contentcol}#2\end{minipage}\par}
+\newcommand{\entry}[2]{#1\hfill #2\\}
+\newcommand{\paper}[1]{\textbf{#1}}
+
+\begin{document}
+
+{\Large\textbf{Cheryl Wu}}\hfill\textbf{Last update: Jul 18, 2026}\\[2pt]
+\rule{\textwidth}{0.8pt}
+
+\cvsection{Contact\\Information}{%
+  \begin{minipage}[t]{2.8in}
+    Yale University\\
+    28 Hillhouse Ave,\\
+    New Haven, CT 06511
+  \end{minipage}\hfill
+  \begin{minipage}[t]{2.6in}
+    \raggedleft\Letter\ \texttt{E-mail:}\,\href{mailto:cheryl.wu@yale.edu}{cheryl.wu@yale.edu}
+  \end{minipage}}
+
+\cvsection{Education}{%
+  \entry{Ph.D. in Economics, Yale University}{2023--current}
+  Fields: Growth, Trade.\\
+  \entry{B.S. in Mathematics, B.A. in Economics with Honors, University of Chicago}{2017--2021}}
+
+\cvsection{Positions}{%
+  \entry{GovAI Winter Fellow}{2026--current}
+  Fields: US-China AI competition, AI governance\\
+  \entry{Visiting Research Fellow at the University of Tokyo}{2024}
+  \entry{Research Assistant for Dr. James Robinson and Dr. Leander Heldring}{2022--2023}
+  \entry{Research Assistant for Dr. Jaya Wen}{2020--2023}
+  \entry{Research Assistant for Dr. Chris Blattman}{2019--2021}}
+
+\cvsection{Honors and\\Awards}{%
+  \entry{EHA Early Stage Dissertation Grant}{2026}
+  \entry{ISPS Survey Research funding}{2025--2026}
+  \entry{Sylff Fellowship}{2025--2026}
+  \entry{Hitotsubashi University Joint Usage and Research Center Programs}{2025--2026}
+  \entry{Robert E. Evenson Fund}{2024}
+  \entry{National Science Foundation Graduate Research Fellowship}{2023}
+  \entry{Phi Beta Kappa Member}{2021}
+  \entry{Summa Cum Laude}{2021}
+  \entry{Student Marshall}{2020}}
+
+\cvsection{Working\\Papers}{%
+  \paper{\href{https://elasticity.institute/rsi-paper.pdf}{``The Economics of Recursive Self-Improvement''}} (2026)\\
+  joint with Tom Cunningham, Lukas Althoff, Basil Halperin, Brian Jabarian, Andrew Koh, Arjun Ramani, Phil Trammell, Parker Whitfill\\
+  \paper{\href{https://drive.google.com/file/d/1IECgWxJP0zuQwfA5LNLCeetzpyEJrngi/view}{``Public Displays of Alignment: Firm Speech in Autocratic Regimes''}} (June 2025)\\
+  joint with Joris Mueller, Jaya Wen, Zi Yang Kang}
+
+\cvsection{Research\\Notes}{%
+  \paper{\href{https://epoch.ai/gradient-updates/what-we-learned-from-1604-chinese-ai-job-postings}{``What We Learned from 1,604 Chinese AI Job Postings''}} (2026)\\
+  joint with Jean-Stanislas Denain, Anson Ho\\
+  \paper{\href{https://metr.org/notes/2026-03-10-many-swe-bench-passing-prs-would-not-be-merged-into-main/}{``Do Benchmarks Overstate AI Capabilities? Evidence from SWE-Bench Verified''}} (2026)\\
+  joint with Parker Whitfill, Nate Rush, Joel Becker\\
+  \paper{\href{https://epoch.ai/gradient-updates/r-and-d-vs-training-compute}{``Final Training Runs Account for a Minority of R\&D Compute Spending''}} (Mar 2026)\\
+  joint with Jean-Stanislas Denain (equal contribution)\\
+  \paper{\href{https://arxiv.org/abs/2507.23181}{``Will Compute Bottlenecks Prevent an Intelligence Explosion?''}} (August 2025)\\
+  joint with Parker Whitfill (equal contribution)}
+
+\cvsection{Works In\\Progress}{%
+  \paper{``Chinese AI Firms' Financial Situation''}\\
+  joint with Konstantin Pilz\\
+  \paper{``Adoption of Western Studies and Growth during the Meiji Restoration''}\\
+  \paper{``FDI and Codification''}\\
+  joint with Kexin Feng}
+
+\cvsection{Referee\\Service}{%
+  \textit{Journal of International Economics}, \textit{European Review of Economic History}}
+
+\cvsection{Technical\\Skills}{%
+  \textit{Programming Languages}: Python, R, Stata\\
+  \textit{Technical Software}: ArcGIS}
+
+\cvsection{References}{%
+  Prof. Konstantin Pilz\\
+  RAND Technology and Security Policy Center (TASP)\\
+  E-mail: kpilz@rand.org\\[6pt]
+  Dr. Pascual Restrepo\\
+  Yale University\\
+  E-mail: pascual.restrepo@yale.edu\\[6pt]
+  Dr. Leah Boustan\\
+  Yale University\\
+  E-mail: leah.boustan@yale.edu}
+
+\cvsection{Languages}{%
+  Wu (native), Mandarin (native), English (fluent), Japanese (fluent, JLPT 2nd level: 172/180), French (intermediate)}
+
+\cvsection{Citizenship}{USA}
+
+\end{document}
