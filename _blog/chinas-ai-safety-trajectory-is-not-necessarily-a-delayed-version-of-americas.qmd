@@ -6,6 +6,9 @@ date: 2026-09-22
 categories: [AI safety, China]
 draft: false
 lang: en
+# Keep the original published URL working.
+aliases:
+  - /china-ai-safety.html
 format:
   html:
     css: china-ai-safety.css

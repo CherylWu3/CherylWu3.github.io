@@ -6,13 +6,13 @@ Write and edit posts in `_blog/`. Quarto, the software used to build the blog, t
 
 ## Your China AI safety post
 
-Edit `_blog/china-ai-safety.qmd`, then double-click `render-blog.command` in Finder or run it from Terminal in the website folder:
+Edit `_blog/chinas-ai-safety-trajectory-is-not-necessarily-a-delayed-version-of-americas.qmd`, then double-click `render-blog.command` in Finder or run it from Terminal in the website folder:
 
 ```sh
 ./render-blog.command
 ```
 
-The article appears at `blog/china-ai-safety.html`. Its four figures live in `_blog/assets/china-ai-safety/`, and its layout is in `_blog/china-ai-safety.css`. The figure files and article stylesheet were recovered from the HTML you supplied. Quarto regenerates the article’s HTML from the `.qmd` source and places it in `blog/`; the imported HTML is no longer kept beside the source.
+The article appears at `blog/chinas-ai-safety-trajectory-is-not-necessarily-a-delayed-version-of-americas.html`. Its four figures live in `_blog/assets/china-ai-safety/`, and its layout is in `_blog/china-ai-safety.css`. The figure files and article stylesheet were recovered from the HTML you supplied. Quarto regenerates the article’s HTML from the `.qmd` source and places it in `blog/`; the imported HTML is no longer kept beside the source.
 
 ## Add another post
 

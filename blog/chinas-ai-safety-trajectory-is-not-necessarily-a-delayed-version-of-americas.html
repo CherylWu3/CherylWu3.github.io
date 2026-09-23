@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Cheryl Wu">
+<meta name="dcterms.date" content="2026-09-22">
+<meta name="description" content="Why AI safety in China may follow a different path from the United States: differences in incidents, disclosure, and government responses.">
 
-<title>Blog – Cheryl Wu</title>
+<title>China’s AI-safety trajectory is not necessarily a delayed version of America’s – Cheryl Wu</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -31,8 +34,6 @@ ul.task-list li input[type="checkbox"] {
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -43,7 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-8a6a5008e4d475834983d7ba8a7458b9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-92af455ef393cfb538827cbaf7182c05.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -59,72 +60,15 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&amp;family=Source+Sans+3:wght@300;400;600&amp;display=swap" rel="stylesheet">
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
+<link rel="stylesheet" href="china-ai-safety.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -157,7 +101,7 @@ window.Quarto = {
 <span class="menu-text">Contact</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
@@ -175,20 +119,52 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#baseline-model" id="toc-baseline-model" class="nav-link active" data-scroll-target="#baseline-model">Baseline model</a></li>
+  <li><a href="#alternative-model" id="toc-alternative-model" class="nav-link" data-scroll-target="#alternative-model">Alternative model: safety incidents need not rise with capability in the same way in the US and China</a></li>
+  <li><a href="#disclosure" id="toc-disclosure" class="nav-link" data-scroll-target="#disclosure">The two countries may disclose safety incidents differently</a></li>
+  <li><a href="#policy-responses" id="toc-policy-responses" class="nav-link" data-scroll-target="#policy-responses">Given safety incidents, the Chinese government’s policy responses could differ from the US government’s</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Blog</h1>
-</div>
+<h1 class="title">China’s AI-safety trajectory is not necessarily a delayed version of America’s</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">AI safety</div>
+    <div class="quarto-category">China</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    Why AI safety in China may follow a different path from the United States: differences in incidents, disclosure, and government responses.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Cheryl Wu </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 22, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -198,42 +174,280 @@ window.Quarto = {
 </header>
 
 
-<div class="blog-empty">
-<p>Posts will appear here as they are published.</p>
+<!-- Render from the website folder: ./render-blog.command
+Article layout: china-ai-safety.css
+Source: Cheryl’s locally edited QMD, saved 2026-09-21.
+The figures are conceptual illustrations.
+-->
+<div class="introduction">
+<div class="source-paragraph" data-source-paragraph="2">
+<p>The WSJ article, “<a href="https://www.wsj.com/tech/ai/china-also-thinks-ai-could-kill-us-but-first-it-wants-to-match-the-u-s-5ab6ba31">China Also Thinks AI Could Kill Us. But First, It Wants to Match the U.S.</a>,” argues that some Chinese researchers see safety work on the most capable AI systems as less urgent because Chinese labs perceive themselves to be trailing U.S. labs.</p>
+</div>
+<div class="source-paragraph" data-source-paragraph="4">
+<p>I see two possible arguments for this view. First, scarcer computing resources mean Chinese labs have less spare compute to devote to safety. Second, less capable models may be involved in fewer safety incidents.</p>
+</div>
+<div class="source-paragraph" data-source-paragraph="6">
+<p>But the second point may not always hold. In this brief note, I argue that China’s AI-safety trajectory need not be a delayed version of America’s, and that safety work in China could make a distinct contribution.</p>
+</div>
+<div class="source-paragraph" data-source-paragraph="8">
+<p>I give three reasons: the incidents may differ, the two countries may disclose them differently, and their governments may respond differently. The relationships shown in the diagrams are hypothetical.</p>
+</div>
+</div>
+<section id="baseline-model" class="level2">
+<h2 class="anchored" data-anchor-id="baseline-model">Baseline model</h2>
+<div class="argument-row">
+<div class="figure-column">
+<figure id="figure-1" class="figure">
+<img src="assets/china-ai-safety/figure-1-riverbed.svg" alt="Conceptual diagram: China and the US are points on the same upward-sloping relationship between capability and safety incidents." loading="lazy" class="figure-img">
+<figcaption>
+<div class="source-paragraph" data-source-paragraph="14">
+<p>Figure 1: A baseline model in which safety incidents rise later in China than in the US.</p>
+</div>
+</figcaption>
+</figure>
+</div>
+<div class="explanation">
+<div class="source-paragraph" data-source-paragraph="12">
+<p>Figure 1 illustrates the baseline model I want to question.</p>
+</div>
+<div class="source-paragraph" data-source-paragraph="16">
+<p>In this model, Chinese models trail US models in capability by a given number of months and are involved in similar safety incidents after a delay.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> As such, China has little independent safety work to do because US researchers will have already identified the problems and developed solutions for the capability levels that Chinese models would eventually reach.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="alternative-model" class="level2">
+<h2 class="anchored" data-anchor-id="alternative-model">Alternative model: safety incidents need not rise with capability in the same way in the US and China</h2>
+<div class="argument-row">
+<div class="figure-column">
+<figure id="figure-2" class="figure">
+<img src="assets/china-ai-safety/figure-2-riverbed.svg" alt="Hypothetical diagram: separate upward-sloping relationships between capability and safety incidents, with the China line steeper than the US line." loading="lazy" class="figure-img">
+<figcaption>
+<div class="source-paragraph" data-source-paragraph="23">
+<p>Figure 2: <strong>Hypothetical:</strong> safety incidents rise differently with AI capability in the US and China.</p>
+</div>
+</figcaption>
+</figure>
+</div>
+<div class="explanation">
+<div class="source-paragraph" data-source-paragraph="19">
+<p>The baseline mental model is misleading.</p>
+<p>Firstly, the US and China need not follow the same relationship between capability and safety incidents. Hypothetically, Chinese models could be involved in a particular kind of safety incident at a lower overall capability level than US models. For example, they might escape a sandbox, a restricted computing environment, at a lower capability level because cybersecurity at a Chinese company could be worse. For another example, open-weight models make their numerical parameters available for others to modify. <a href="https://arxiv.org/abs/2310.03693">Further training can weaken safety safeguards</a>. Differences in how people use models could also affect which safety incidents occur.</p>
+</div>
+<div class="source-paragraph" data-source-paragraph="21">
+<p>Secondly, the relationship (slope) between safety incidents and capability could also be steeper for one country’s models. A similar increase in capability could accompany a larger increase in safety incidents. A persistent capability gap would therefore not guarantee a persistent gap in incident frequency or severity.</p>
+</div>
+<div class="source-paragraph" data-source-paragraph="34">
+<p>Lastly, even when models pose similar overall risks, the kinds of safety incidents could differ. <strong>This example is entirely hypothetical:</strong> US models might more often take actions without authorization, while Chinese models might exploit flaws in their reward system rather than complete the intended task. A method that addresses one problem may not address the other.</p>
+</div>
+</div>
+</div>
+<div class="evidence-box">
+<div class="source-paragraph box-heading" data-source-paragraph="25">
+<p>Evidence and examples</p>
+</div>
+<div class="source-paragraph box-subheading" data-source-paragraph="26">
+<p>The earliest reports I know of involving US and Chinese models acting beyond their intended sandbox boundaries concern Claude Mythos Preview and ROME, respectively. I also include a later, related example involving Kimi K3. The Chinese models have lower estimated capabilities than Mythos Preview.</p>
+</div>
+<div class="evidence-grid">
+<div class="evidence-group us">
+<div class="source-paragraph group-heading country-label" data-source-paragraph="27">
+<p>US models</p>
+</div>
+<div class="evidence-item">
+<div class="evidence-label">
+<p>Claude Mythos Preview</p>
+</div>
+<div class="source-paragraph" data-source-paragraph="28">
+<p><span class="case-meta">Reported by Anthropic · April 7, 2026</span></p>
+<p><a href="https://www.anthropic.com/glasswing">Anthropic reported</a> that an earlier version of Claude Mythos Preview was put in a secured container and explicitly told to escape and contact the researcher. It developed a multi-step exploit, obtained broader internet access, emailed the researcher, and posted details of the exploit publicly without being asked.</p>
+<p><strong>ECI (Epoch Capabilities Index): my rough estimate is about 161.</strong></p>
+</div>
+</div>
+</div>
+<div class="evidence-group china">
+<div class="source-paragraph group-heading country-label" data-source-paragraph="29">
+<p>Chinese models</p>
+</div>
+<div class="evidence-item">
+<div class="evidence-label">
+<p>ROME</p>
+</div>
+<div class="source-paragraph" data-source-paragraph="31">
+<p><span class="case-meta">Paper first submitted · December 31, 2025</span></p>
+<p><a href="https://arxiv.org/html/2512.24873v1#S3.SS1.SSS4">The ROME team reported</a> that, during RL, an AI agent opened a remote-access connection outside its intended environment and used computing resources for cryptocurrency mining. Neither action was requested or necessary for its tasks.</p>
+<p><strong>ECI: my rough estimate is about 142.</strong></p>
+</div>
+</div>
+<div class="evidence-item">
+<div class="evidence-label">
+<p>Kimi K3</p>
+</div>
+<div class="source-paragraph" data-source-paragraph="30">
+<p><span class="case-meta">Reported by Frontier Security · August 6, 2026</span></p>
+<p><a href="https://blog.frontier.security/chinese-model-kimi-k3-breaks-uk-ai-safety-institute-benchmark-evaluations/">Frontier Security reported</a> that Kimi K3 retrieved a cybersecurity benchmark’s published solution from GitHub instead of solving the task itself. GitHub was reachable through a network allowlist intended for package maintenance, although most websites were blocked. The model was not instructed to escape the sandbox.</p>
+<p><strong>ECI: approximately <a href="https://epoch.ai/models/kimi-k3">158 for Kimi K3</a>.</strong></p>
+</div>
+</div>
+</div>
+</div>
+<div class="source-paragraph evidence-caveat" data-source-paragraph="32">
+<p>My rough ECI estimates for Mythos Preview and ROME are based mainly on their reported benchmark results and comparisons with models I judged to have similar capabilities.</p>
+<p>These cases do not establish when either country first encountered such incidents, or which models are more likely to produce them. Delayed or missing disclosure means earlier incidents may have gone unreported.</p>
+<p>I would love to see more rigorous research on how safety incidents relate to capability across companies and countries.</p>
+</div>
+</div>
+</section>
+<section id="disclosure" class="level2">
+<h2 class="anchored" data-anchor-id="disclosure">The two countries may disclose safety incidents differently</h2>
+<div class="argument-row">
+<div class="figure-column">
+<figure id="figure-3" class="figure">
+<img src="assets/china-ai-safety/figure-3-riverbed.svg" alt="Hypothetical diagram: safety incident reports rise with safety incidents, with the US line steeper than the China line." loading="lazy" class="figure-img">
+<figcaption>
+<div class="source-paragraph" data-source-paragraph="40">
+<p>Figure 3: <strong>Hypothetical</strong> differences in public reports of safety incidents.</p>
+</div>
+</figcaption>
+</figure>
+</div>
+<div class="explanation">
+<div class="source-paragraph" data-source-paragraph="37">
+<p>Public reports give us an incomplete picture of underlying risks. Even if two sets of models were involved in similar safety incidents, differences in evaluation and disclosure could produce different numbers of public reports.</p>
+</div>
+<div class="source-paragraph" data-source-paragraph="38">
+<p>For example, independent evaluators may have different access to labs, and disclosure rules may differ. Figure 3 illustrates how those differences could affect reporting; the direction and size of the gap are hypothetical.</p>
+</div>
+</div>
+</div>
+<div class="evidence-box">
+<div class="source-paragraph box-heading" data-source-paragraph="41">
+<p>Evidence and examples</p>
+</div>
+<div class="evidence-grid">
+<div class="evidence-group">
+<div class="group-heading">
+<p>Independent evaluation</p>
+</div>
+<div class="evidence-item">
+<div class="evidence-label">
+<p>METR at Anthropic</p>
+</div>
+<div class="source-paragraph" data-source-paragraph="42">
+<p><a href="https://metr.org/blog/2026-03-25-red-teaming-anthropic-agent-monitoring/">METR described a researcher spending three weeks testing Anthropic’s monitoring systems</a> in a post published in March 2026. This is an example of an independent evaluator working inside a lab. There is no known embedding of third-party evaluators at Chinese AI companies yet.</p>
+</div>
+</div>
+</div>
+<div class="evidence-group">
+<div class="group-heading">
+<p>Disclosure rules</p>
+</div>
+<div class="evidence-item">
+<div class="evidence-label">
+<p>China’s vulnerability regulations</p>
+</div>
+<div class="source-paragraph" data-source-paragraph="43">
+<p>Chinese vulnerability disclosure rules are more stringent (in terms of CVEs). China’s <a href="https://www.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2021/art_973d80e9e38d440d94523e4ccf09e8fb.html">Regulations on the Management of Security Vulnerabilities in Network Products</a> restrict public disclosure of software and hardware security vulnerabilities (see Article 9). Such rules could affect the public information available about some AI-system vulnerabilities.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="policy-responses" class="level2">
+<h2 class="anchored" data-anchor-id="policy-responses">Given safety incidents, the Chinese government’s policy responses could differ from the US government’s</h2>
+<div class="argument-row">
+<div class="figure-column">
+<figure id="figure-4" class="figure">
+<img src="assets/china-ai-safety/figure-4-riverbed.svg" alt="Hypothetical policy diagram over time: the US curve starts bending at a lower level of safety incidents and flattens more gradually than the China curve; the China curve crosses the catastrophe threshold." loading="lazy" class="figure-img">
+<figcaption>
+<div class="source-paragraph" data-source-paragraph="59">
+<p>Figure 4: <strong>Hypothetical</strong> policy response differences between the two countries.</p>
+</div>
+</figcaption>
+</figure>
+</div>
+<div class="explanation">
+<div class="source-paragraph" data-source-paragraph="47">
+<p>Government responses may also differ in two ways: how quickly officials recognize a problem and decide to act, and how quickly an agreed response is carried out.</p>
+</div>
+<div class="source-paragraph policy-dimension" data-source-paragraph="51">
+<p><strong>Recognizing problems: China might have a higher threshold for what is deemed a “problem”.</strong></p>
+</div>
+<div class="source-paragraph policy-dimension" data-source-paragraph="48">
+<p><strong>Policy implementation: China generally acts quickly after a decision.</strong></p>
+</div>
+<div class="source-paragraph" data-source-paragraph="55">
+<p>Figure 4 illustrates one possible outcome. A slowdown threshold is the level of safety incidents at which policymakers decide to intervene. In this scenario, the US starts slowing the rise in incidents after a short delay, at a lower incident level than China. China responds later and slows the rise more sharply, but too late to stay below the hypothetical catastrophe threshold.</p>
+</div>
+<div class="source-paragraph" data-source-paragraph="56">
+<p>Different assumptions could reverse this outcome. If China decided to intervene at a slightly lower incident level and the US took sufficiently long to implement its response, China might in the end have responded more promptly than the US.</p>
+</div>
+</div>
+</div>
+<div class="evidence-box">
+<div class="box-heading">
+<p>Evidence and examples</p>
+</div>
+<div class="evidence-grid">
+<div class="evidence-group">
+<div class="group-heading">
+<p>Policy implementation</p>
+</div>
+<div class="evidence-item">
+<div class="evidence-label">
+<p>Education policy</p>
+</div>
+<div class="source-paragraph" data-source-paragraph="49">
+<p>The central <a href="https://www.moe.gov.cn/jyb_xxgk/moe_1777/moe_1778/202107/t20210724_546576.html">“Double Reduction” policy</a> restricting after-school academic tutoring was issued on July 24, 2021. By December, the <a href="https://en.moe.gov.cn/news/press_releases/202201/t20220107_593036.html">Ministry of Education reported</a> that the number of offline academic tutoring institutions had fallen 83.8%, and online institutions 84.1%.</p>
+</div>
+</div>
+<div class="evidence-item">
+<div class="evidence-label">
+<p>Wuhan lockdown</p>
+</div>
+<div class="source-paragraph" data-source-paragraph="50">
+<p>For Covid-19, Wuhan announced major transport restrictions around 2 a.m. on January 23, 2020, with closures taking effect at 10 a.m. By January 29, all mainland provincial-level jurisdictions had activated the highest emergency-response level, according to the <a href="https://ga.china-embassy.gov.cn/fra/zxxx/202006/t20200608_6797584.htm">government’s account</a>.</p>
+</div>
+</div>
+</div>
+<div class="evidence-group">
+<div class="group-heading">
+<p>Recognizing problems</p>
+</div>
+<div class="evidence-item">
+<div class="evidence-label">
+<p>Early Covid-19 warnings</p>
+</div>
+<div class="source-paragraph" data-source-paragraph="52">
+<p>Chinese authorities suppressed early COVID-19 warnings. A whistleblower warned about COVID 19 on December 30 but was reprimanded. <a href="https://www.xinhuanet.com/politics/2020-01/23/c_1125495557.htm">Wuhan’s transport shutdown began on January 23</a>, more than three weeks after those warnings.</p>
+</div>
+</div>
+<div class="evidence-item">
+<div class="evidence-label">
+<p>Wenzhou train collision</p>
+</div>
+<div class="source-paragraph" data-source-paragraph="53">
+<p>Before the July 2011 Wenzhou train crash, the Ministry of Railways had prioritized construction speed over safety (e.g.&nbsp;allowing seriously defective train-control equipment into service without field testing). The State Council <a href="https://www.gov.cn/gongbao/content/2011/content_1933709.htm">ordered nationwide high-speed rail safety inspections</a> only after the crash.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="source-paragraph" data-source-paragraph="60">
+<p>In this article, I illustrated several reasons why Chinese contributions to AI safety are important and why Chinese researchers should not be seen as merely following their US counterparts. I want to stress I am not sure about the specifics of the models here, but I do believe the baseline model is too simplistic. I look forward to more work being done to enlighten us about the current situation of AI safety in China.</p>
 </div>
 
 
+</section>
 
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="QUklMjBzYWZldHklMkNDaGluYQ==" data-listing-date-sort="1790060400000" data-listing-file-modified-sort="1790126924286" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1594">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./chinas-ai-safety-trajectory-is-not-necessarily-a-delayed-version-of-americas.html" class="no-external">China’s AI-safety trajectory is not necessarily a delayed version of America’s</a>
-</h3>
-<div class="listing-categories">
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
-<div class="listing-category" onclick="window.quartoListingCategory('QUklMjBzYWZldHk='); return false;">AI safety</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Q2hpbmE='); return false;">China</div>
-
-</div>
-<div class="delink listing-description"><a href="./chinas-ai-safety-trajectory-is-not-necessarily-a-delayed-version-of-americas.html" class="no-external">
-<p>Why AI safety in China may follow a different path from the United States: differences in incidents, disclosure, and government responses.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./chinas-ai-safety-trajectory-is-not-necessarily-a-delayed-version-of-americas.html" class="no-external">
-<div class="listing-date">
-Sep 22, 2026
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+<ol>
+<li id="fn1"><p>“Safety incidents” can refer to either the number of incidents or their severity. All relationships and thresholds shown in the diagrams are hypothetical, not measured.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
