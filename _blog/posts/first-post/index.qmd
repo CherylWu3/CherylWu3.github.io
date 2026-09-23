@@ -1,0 +1,48 @@
+---
+title: "Your first post"
+description: "A draft to start writing in Quarto."
+date: 2026-09-21
+categories: [Notes]
+draft: true
+---
+
+Replace this paragraph with the main point of your post. Keep `draft: true`
+until you are ready to include it in the published blog.
+
+## The idea
+
+Write here in ordinary Markdown. You can use **bold**, *italics*,
+[links](https://quarto.org/docs/authoring/markdown-basics.html), and footnotes.[^note]
+
+[^note]: Put a source or a short aside here.
+
+## An example
+
+Quarto also formats equations:
+
+$$
+Y = A K^{\alpha} L^{1-\alpha}
+$$
+
+And tables:
+
+| Section | What to include |
+|:--|:--|
+| Idea | The question and why it matters |
+| Evidence | The sources or results |
+| Conclusion | What the evidence supports and what remains uncertain |
+
+::: {.callout-note}
+## A useful aside
+
+Use a callout like this for an assumption, definition, or qualification.
+:::
+
+<!-- To add a figure, put the image in this folder and uncomment the next line.
+![A caption explaining the figure.](figure.png){#fig-example fig-alt="Describe what the figure shows."}
+Then refer to it in your prose with @fig-example.
+-->
+
+## What follows
+
+Replace these examples with your own argument, evidence, and conclusion.

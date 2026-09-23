@@ -1,0 +1,55 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - "*.qmd"
+    - posts/**/*.qmd
+
+website:
+  title: "Cheryl Wu"
+  description: "Writing by Cheryl Wu."
+  search: false
+  navbar:
+    title: "Cheryl Wu"
+    background: light
+    collapse-below: lg
+    right:
+      - text: About
+        href: ../index.html#about
+      - text: Research
+        href: ../index.html#research
+      - text: CV
+        href: ../index.html#cv
+      - text: Contact
+        href: ../index.html#contact
+      - text: Blog
+        href: index.qmd
+      - text: Photography
+        href: ../photography.html
+  page-footer:
+    center:
+      - text: Email
+        href: mailto:cheryl.wu@yale.edu
+      - text: X
+        href: https://x.com/cherylwoooo
+      - text: Substack
+        href: https://greatdivergence.com
+
+format:
+  html:
+    theme: [default, theme.scss]
+    toc: true
+    toc-title: "On this page"
+    title-block-banner: false
+    date-format: "MMMM D, YYYY"
+    link-external-newwindow: true
+    code-copy: true
+    code-overflow: wrap
+    include-in-header:
+      text: |
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+
+execute:
+  freeze: auto

@@ -1,0 +1,19 @@
+---
+title: "Blog"
+toc: false
+listing:
+  contents:
+    - "*.qmd"
+    - "posts/**/*.qmd"
+  sort: "date desc"
+  type: default
+  fields: [date, title, description, categories]
+  date-format: "MMM D, YYYY"
+  sort-ui: false
+  filter-ui: false
+  page-size: 20
+---
+
+::: {.blog-empty}
+Posts will appear here as they are published.
+:::

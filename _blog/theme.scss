@@ -1,0 +1,176 @@
+/*-- scss:defaults --*/
+$body-bg: #fafaf8;
+$body-color: #3a3a3a;
+$link-color: #2b5797;
+$primary: #2b5797;
+$headings-color: #1a2744;
+$font-family-sans-serif: "Source Sans 3", "Segoe UI", sans-serif;
+$headings-font-family: "Lora", "Georgia", serif;
+$font-size-root: 17px;
+$line-height-base: 1.7;
+$navbar-bg: #fafaf8;
+$navbar-fg: #555;
+$navbar-hl: #2b5797;
+$code-block-bg: #f1f2f3;
+$code-color: #1a2744;
+$border-color: #e0ddd6;
+$toc-color: #2b5797;
+
+/*-- scss:rules --*/
+body {
+  font-family: $font-family-sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $headings-font-family;
+  color: $headings-color;
+}
+
+.navbar {
+  border-bottom: 1px solid #e0ddd6;
+  padding-top: 0.65rem;
+  padding-bottom: 0.65rem;
+}
+
+.navbar > .container-fluid {
+  max-width: 1100px;
+  margin-inline: auto;
+}
+
+.navbar-brand {
+  font-family: $headings-font-family;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #1a2744;
+}
+
+.navbar .nav-link {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+#quarto-content {
+  padding-top: 2.5rem;
+}
+
+#title-block-header {
+  margin-bottom: 2.5rem;
+}
+
+#title-block-header h1 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+#title-block-header .description {
+  color: #626262;
+  font-size: 1.15rem;
+  max-width: 42rem;
+  margin-top: 1rem;
+}
+
+h2 {
+  margin-top: 2.2rem;
+  border-bottom-color: #e0ddd6;
+}
+
+main a:not(.anchorjs-link):not(.quarto-title-meta a) {
+  text-underline-offset: 0.18em;
+}
+
+/* Post list: a hairline between articles, none after the last one.
+   Mirrors .pub-item on the main site. */
+.quarto-listing-default .quarto-post {
+  padding-block: 1.8rem;
+  border-bottom: 1px solid #e8e6e0;
+}
+
+.quarto-listing-default .quarto-post:last-child {
+  border-bottom: none;
+}
+
+.quarto-listing-default .quarto-post:first-child {
+  padding-top: 0.6rem;
+}
+
+.quarto-listing-default .listing-title {
+  font-family: $headings-font-family;
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin-bottom: 0.35rem;
+}
+
+.quarto-listing-default .listing-title a {
+  color: $headings-color;
+}
+
+.quarto-listing-default .listing-title a:hover {
+  color: $link-color;
+}
+
+.quarto-post .listing-description,
+.quarto-post .listing-description p {
+  font-family: $font-family-sans-serif;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.quarto-post .metadata,
+.quarto-post .listing-date {
+  font-family: $font-family-sans-serif;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.quarto-post .listing-category {
+  font-family: $font-family-sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #777;
+}
+
+.blog-empty {
+  padding-block: 2rem;
+  border-top: 1px solid #e0ddd6;
+  color: #666;
+}
+
+main:has(.quarto-post) .blog-empty {
+  display: none;
+}
+
+.nav-footer {
+  background: #1a2744;
+  color: #c8d1e0;
+  padding-block: 2rem;
+}
+
+.nav-footer a {
+  color: #a0b4d0;
+  font-family: $font-family-sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.nav-footer a:hover {
+  color: #fff;
+}
+
+@media (max-width: 767px) {
+  #quarto-content {
+    padding-top: 1.25rem;
+  }
+
+  .quarto-listing-default .quarto-post {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .quarto-listing-default .quarto-post .metadata {
+    flex-basis: auto;
+  }
+}
