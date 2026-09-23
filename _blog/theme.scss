@@ -65,10 +65,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #title-block-header .description {
-  color: #626262;
-  font-size: 1.15rem;
-  max-width: 42rem;
-  margin-top: 1rem;
+  display: none;
 }
 
 h2 {
@@ -80,15 +77,10 @@ main a:not(.anchorjs-link):not(.quarto-title-meta a) {
   text-underline-offset: 0.18em;
 }
 
-/* Post list: a hairline between articles, none after the last one.
-   Mirrors .pub-item on the main site. */
+/* Post list: a hairline under every article, closing off the list. */
 .quarto-listing-default .quarto-post {
   padding-block: 1.8rem;
   border-bottom: 1px solid #e8e6e0;
-}
-
-.quarto-listing-default .quarto-post:last-child {
-  border-bottom: none;
 }
 
 .quarto-listing-default .quarto-post:first-child {
