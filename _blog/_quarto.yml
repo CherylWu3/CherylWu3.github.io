@@ -11,6 +11,8 @@ website:
   search: false
   navbar:
     title: "Cheryl Wu"
+    # The brand otherwise links to the blog index; send it to the front page.
+    logo-href: ../index.html
     background: light
     collapse-below: lg
     right:
