@@ -532,24 +532,37 @@ img {
   bottom: 0;
   background: rgba(26, 39, 68, 0.92);
   display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 24px;
+  overflow-y: auto;
   opacity: 0;
+  pointer-events: none;
   transition: opacity 0.4s;
   border-radius: 4px;
 }
 
 .flip-card.show-note .flip-card-note {
   opacity: 1;
+  pointer-events: auto;
 }
 
 .flip-card-note p {
+  /* auto margins center the note, but start it at the top (scrollable) when it overflows */
+  margin: auto;
   color: #c8d1e0;
   font-family: 'Lora', serif;
   font-size: 1rem;
   text-align: center;
   line-height: 1.6;
+}
+
+/* Long notes, such as full poems */
+.flip-card .flip-card-note.long-note {
+  padding: 16px;
+}
+
+.flip-card-note.long-note p {
+  font-size: 0.8rem;
+  line-height: 1.5;
 }
 
 .gallery-item-static {

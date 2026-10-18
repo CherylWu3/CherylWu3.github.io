@@ -92,6 +92,7 @@
 
           const overlay = document.createElement('div');
           overlay.className = 'flip-card-note';
+          if ((photo.note.match(/<br>/gi) || []).length >= 10) overlay.classList.add('long-note');
           const note = document.createElement('p');
           note.innerHTML = photo.note;
           overlay.appendChild(note);

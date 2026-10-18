@@ -75,7 +75,7 @@ const PHOTOS = [
 ,
   {"src": "photos/img20250908_0392%20copy.jpg", "alt": "img20250908_0392 copy", "note": "Alaska"}
 ,
-  {"src": "photos/img20250908_0395%20copy.jpg", "alt": "img20250908_0395 copy", "note": "Alaska"}
+  {"src": "photos/img20250908_0395%20copy.jpg", "alt": "img20250908_0395 copy", "note": "《逃亡》<br><br>睡吧，睡吧<br>那忧伤的神灵告诉我<br>在梦里，也许不会再如此伤情<br>摇曳的花<br>顺从的风<br>都会来找我<br>与我一起舞蹈<br><br>醒醒，醒醒<br>那脆弱的意志告诉我<br>在灰暗的世界里，总也会有光<br>匆忙的溪<br>冰冷的雨<br>也许也会来<br>对我轻声慰问<br><br>把要去远方的地址<br>写在手掌<br>不论如何不清明<br>在这漫天纷雪里<br>只要还睁一只眼<br>便会向着那个方向<br>前行"}
 ,
   {"src": "photos/img20250908_0396%20copy%202.jpg", "alt": "img20250908_0396 copy 2", "note": "Alaska"}
 ,
