@@ -2343,9 +2343,6 @@ gap: var(--note-pair-gap);
 align-items: start;
 }
 .argument-row + .argument-row { margin-top: 2rem; }
-
-.argument-row.chart-heavy { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); }
-@media (max-width: 799.98px) { .argument-row.chart-heavy { grid-template-columns: 1fr; } }
 .explanation, .figure-column { min-width: 0; }
 .explanation > :last-child, .explanation > :last-child > :last-child { margin-bottom: 0; }
 .figure-column { position: sticky; top: 1.5rem; }
@@ -2762,7 +2759,7 @@ figure, .quote-card, .direction { break-inside: avoid; }
 </section>
 <section id="crypto-finding-4" class="level3">
 <h3 class="anchored" data-anchor-id="crypto-finding-4">Tentative Finding 4: Accelerations in hacking vary by exploit type</h3>
-<div class="argument-row chart-heavy">
+<div class="argument-row">
 <div class="explanation">
 <p>We counted DeFiLlama hacks by month and exploit type across 13 categories from January 2023 to September 2026, excluding incomplete October data.</p>
 <p>Many of our findings fit what we’d intuitively expect.</p>
@@ -2826,7 +2823,7 @@ figure, .quote-card, .direction { break-inside: avoid; }
 </section>
 <section id="ransomware-finding-4" class="level3">
 <h3 class="anchored" data-anchor-id="ransomware-finding-4">Tentative Finding 4: Evidence of AI use in ransomware negotiations</h3>
-<div class="argument-row chart-heavy">
+<div class="argument-row">
 <div class="explanation">
 <p>We used Pangram 4.1 to examine possible AI use in publicly available ransomware negotiations from the <a href="https://ransomch.at/">Ransomchat</a> dataset. The dataset contained 276 chats and 12,889 messages involving 31 ransomware hacker groups. We selected timestamped, English-language attacker messages longer than 50 words and excluded templates, which left us with 344 messages.</p>
 <p>Note that our 2026 results are mostly limited to Q1: Ransomchat updates its dataset with a lag, which means that it has little coverage of Q2-Q3 2026. The 21 September 2026 Ransomchat snapshot contained few negotiations after March 2026, and historically, for chats since 2023, the median publication lag was four months, and the mean was five months.</p>
