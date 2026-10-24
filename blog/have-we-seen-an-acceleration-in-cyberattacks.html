@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Cheryl Wu">
+<meta name="author" content="Jasmine Li">
+<meta name="dcterms.date" content="2026-10-24">
+<meta name="description" content="We check public data on cryptocurrency hacks and ransomware for signs that cyberattacks sped up in 2026.">
+
+<title>Have we seen an acceleration in cyberattacks? – Cheryl Wu</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-14e42f192c81c91115198bad8b5ff06d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&amp;family=Source+Sans+3:wght@300;400;600&amp;display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="cyber-acceleration.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Cheryl Wu</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./../index.html#about"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./../index.html#research"> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./../index.html#cv"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./../index.html#contact"> 
+<span class="menu-text">Contact</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./../photography.html"> 
+<span class="menu-text">Photography</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#crypto" id="toc-crypto" class="nav-link" data-scroll-target="#crypto">Crypto attacks</a></li>
+  <li><a href="#ransomware" id="toc-ransomware" class="nav-link" data-scroll-target="#ransomware">Ransomware attacks</a></li>
+  <li><a href="#implications" id="toc-implications" class="nav-link" data-scroll-target="#implications">Implications and future work</a></li>
+  <li><a href="#appendix" id="toc-appendix" class="nav-link" data-scroll-target="#appendix">Appendix</a></li>
+  <li><a href="#appendix-b" id="toc-appendix-b" class="nav-link" data-scroll-target="#appendix-b">Appendix B: Pangram messages</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Have we seen an acceleration in cyberattacks?</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">AI safety</div>
+    <div class="quarto-category">Cybersecurity</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    We check public data on cryptocurrency hacks and ransomware for signs that cyberattacks sped up in 2026.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Co-lead authors</div>
+    <div class="quarto-title-meta-contents">
+             <p>Cheryl Wu </p>
+             <p>Jasmine Li </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 24, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>This week’s cybersecurity events have been cause for alarm: <a href="https://www.wiz.io/blog/php2shell-php-rce">PHP2Shell vulnerabilities</a> have triggered widespread patching and <a href="https://www.rijksoverheid.nl/actueel/nieuws/2026/10/21/aantal-websites-rijksoverheid-preventief-offline-na-kwetsbaarheden-php">precautionary shutdowns</a>, and AI agents have been documented in attacks against <a href="https://www.straiker.ai/blog/inside-carliy0s-how-cybercartel-used-multiple-ai-models-to-attack-latin-american-banks">banks</a>, <a href="https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-agentic-ai-campaigns/">healthcare organizations</a>, and <a href="https://www.microsoft.com/en-us/security/blog/2026/10/21/storm-0940-uses-artex-agentic-ai-connectwise-supply-chain-compromise/">corporate cloud systems</a>.</p>
+<p>At the same time, AI models, including open-weight ones, continue to scale their cyber capability. Vals AI <a href="https://x.com/ValsAI/status/2112471082397778083">reports</a> that DeepSeek V4.1 Flash 1017, a Chinese open-weight model, outperformed the frontier closed model GPT 6 Sol on its multi-step offensive cybersecurity evaluation at substantially lower cost.</p>
+<p><strong>These developments raise a broader question: is there evidence of a measurable acceleration in cyberattacks in 2026?</strong></p>
+<p>Following <a href="https://metr.org/notes/2026-08-14-llm-contribution-to-discoveries/#overview">Cunningham &amp; Rush (2026)</a>, we examine publicly available data on cryptocurrency hacks and ransomware for signs of acceleration. Our preliminary findings are:</p>
+<div class="panel key-findings">
+<ul>
+<li><strong>Recorded cryptocurrency hacks accelerated after April 2026.</strong><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
+<li><strong>The increase was particularly pronounced for crypto code exploits and smaller thefts. We also find acceleration among larger thefts, though it is less pronounced.</strong></li>
+<li><strong>Recorded ransomware attacks show no clear acceleration, but growth in the number of ransomware hacker groups posting victims has accelerated.</strong></li>
+<li><strong>Ransomware hacker groups are sending more AI-generated negotiation messages, though these remain a small share of all negotiation messages.</strong></li>
+</ul>
+</div>
+<p>Additionally, <a href="#appendix-a">Appendix A</a> checks the crypto findings against six other hack trackers.</p>
+<p>Overall, we are moderately confident (~75%) that crypto attacks have accelerated in 2026.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> We open-source our code, data, and results in <a href="https://github.com/jasmineee-li/cyber-attack-acceleration">our GitHub repo</a>.</p>
+</section>
+<section id="crypto" class="level2">
+<h2 class="anchored" data-anchor-id="crypto">Crypto attacks</h2>
+<div class="source-note">
+<p><strong>Data source.</strong> Our main source is <a href="https://defillama.com/hacks">DeFiLlama</a>, a public crypto-data website that keeps a list of hacks on decentralized finance. We downloaded a dataset of 1,306 incidents from 2011 to 2026 (of which 1,218 are from 2020-2026), each with a date, an amount stolen, and a classification of the cause. We have also collected data from other websites that recorded crypto attacks, including CertiK, Comparitech, and more, in Appendix A.</p>
+</div>
+<div class="argument-row finding-row">
+<section id="crypto-finding-1" class="level3 explanation">
+<h3 class="anchored" data-anchor-id="crypto-finding-1">Tentative Finding 1: The number of recorded crypto hacks has accelerated in 2026</h3>
+</section>
+<div class="figure-column">
+<p><a href="assets/cyber-acceleration/fig08_defillama_hacks_per_month.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="assets/cyber-acceleration/fig08_defillama_hacks_per_month.png" class="img-fluid" alt="Bar chart of crypto hacks per month in DeFiLlama's list, January 2020 to October 2026."></a></p>
+</div>
+</div>
+<div class="argument-row finding-row">
+<section id="crypto-finding-2" class="level3 explanation">
+<h3 class="anchored" data-anchor-id="crypto-finding-2">Tentative Finding 2: Most of that acceleration comes from smaller thefts in 2026</h3>
+<p>The increase in recorded small thefts could reflect two mechanisms:</p>
+<ol type="1">
+<li>Cheaper attacks: AI lowers the cost of carrying out an attack, which makes smaller targets worth the effort.</li>
+<li>Better detection: AI helps <a href="https://www.ibm.com/think/topics/anomaly-detection">discover anomalies</a>, increasing the rate of identification of smaller thefts that would previously have gone unnoticed or unreported.</li>
+</ol>
+<p>We cannot distinguish these mechanisms. We assign a subjective probability of 75% that both are contributing, with some real rise in cheaper attacks.</p>
+</section>
+<div class="figure-column">
+<p><a href="assets/cyber-acceleration/fig11_defillama_hacks_by_size_per_month.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="assets/cyber-acceleration/fig11_defillama_hacks_by_size_per_month.png" class="img-fluid" alt="Two bar charts on one scale of crypto hacks per month, January 2020 to October 2026: hacks over 1 million dollars, and hacks of 1 million dollars or less."></a></p>
+</div>
+</div>
+<div class="argument-row finding-row">
+<section id="crypto-finding-3" class="level3 explanation">
+<h3 class="anchored" data-anchor-id="crypto-finding-3">Tentative Finding 3: Total losses show little acceleration</h3>
+</section>
+<div class="figure-column">
+<p><a href="assets/cyber-acceleration/fig10_defillama_total_stolen.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="assets/cyber-acceleration/fig10_defillama_total_stolen.png" class="img-fluid" alt="Bar chart of the total reported loss in crypto hacks by month, January 2020 to October 2026."></a></p>
+<div class="fig-note">
+<p>Note: DeFiLlama gives no dollar loss for 37 of the 1,218 hacks listed since January 2020 (3%). By year, the share ranges from 0.5% (2023) to 5.1% (2024), and it is 3.4% in 2026. This chart counts those hacks as zero, so monthly totals are slightly understated.</p>
+</div>
+</div>
+</div>
+<div class="argument-row finding-row">
+<section id="crypto-finding-4" class="level3 explanation">
+<h3 class="anchored" data-anchor-id="crypto-finding-4">Tentative Finding 4: The amount of loss from each exploit did not accelerate in 2026</h3>
+</section>
+<div class="figure-column">
+<p><a href="assets/cyber-acceleration/fig09_defillama_avg_hack_size.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="assets/cyber-acceleration/fig09_defillama_avg_hack_size.png" class="img-fluid" alt="Bar chart of the average reported loss per crypto hack by month, January 2020 to October 2026."></a></p>
+<div class="fig-note">
+<p>Note: DeFiLlama gives no dollar loss for 37 of the 1,218 hacks listed since January 2020 (3%). By year, the share ranges from 0.5% (2023) to 5.1% (2024), and it is 3.4% in 2026. This chart averages only the hacks with a dollar loss.</p>
+</div>
+</div>
+</div>
+<div class="argument-row finding-row">
+<section id="crypto-finding-5" class="level3 explanation">
+<h3 class="anchored" data-anchor-id="crypto-finding-5">Tentative Finding 5: Accelerations in hacking vary by exploit type</h3>
+<p>We counted DeFiLlama hacks by month and exploit type across 13 categories from January 2023 to September 2026, excluding incomplete October data.</p>
+<p>Many of our findings fit what we’d intuitively expect.</p>
+<ul>
+<li>Many accelerated exploit types (input validation, access control, token and share accounting, oracle manipulation, key compromise) involve finding software flaws or reasoning about how a protocol behaves. These are tasks that AI coding agents could plausibly accelerate.</li>
+<li>Many non-accelerated exploit types (rug pulls, social engineering, market manipulation, governance) principally depend on persuading people, building credibility, or attracting investor funds. So, these hacks are probably less accelerated by improved AI coding capabilities.</li>
+</ul>
+<p>The pattern is not clear-cut, though: reentrancy is also a code-based exploit category, yet it did not show acceleration in our analysis.</p>
+<p>One possible explanation is that AI tools reduce the effort required for some exploit types more than others. Another possible explanation is that AI tools help discover anomalies that are also more AI-exploitable. The second explanation may be a little far-fetched in our opinion, because AI-assisted detection and AI-exploitability do not necessarily go hand in hand. For example, <a href="https://arxiv.org/abs/2509.01168">machine-learning methods can effectively detect rug pulls</a>, even though rug pulls themselves don’t seem to be particularly AI-exploitable.</p>
+</section>
+<div class="figure-column">
+<p><a href="assets/cyber-acceleration/fig36_defillama_hacks_by_type_accelerated_counts.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="assets/cyber-acceleration/fig36_defillama_hacks_by_type_accelerated_counts.png" class="img-fluid" alt="Small line charts of monthly hack counts, 2023 to September 2026, for the six exploit types that accelerated."></a></p>
+<p><a href="assets/cyber-acceleration/fig37_defillama_hacks_by_type_not_accelerated_counts.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="assets/cyber-acceleration/fig37_defillama_hacks_by_type_not_accelerated_counts.png" class="img-fluid" alt="Small line charts of monthly hack counts, 2023 to September 2026, for the seven exploit types that did not accelerate."></a></p>
+</div>
+</div>
+<div class="panel caveat">
+<p><strong>Caveat:</strong> Overall, we are ~75% confident that 2026 displays a genuine acceleration in the number of crypto hacks, beyond changes in detection and reporting.</p>
+<p>The increase in recorded hacks could partly reflect improved detection, reporting, or database coverage. We could not verify whether DeFiLlama’s collection process remained consistent over the study period, so we cannot rule out that changes stemmed from the discovery of incidents. We therefore compare the pattern across other trackers (see Appendix A), although agreement across trackers would not fully resolve this concern if they rely on overlapping reports or detection systems.</p>
+<p>To help address this concern, we also examine attacks involving losses of at least $1 million, since larger thefts are harder to miss. We find an acceleration in larger attacks too, though the acceleration is much smaller.</p>
+<p>We also break down attacks by exploit type. The categories showing acceleration tend to be the ones that we’d expect to be more amenable to AI assistance. It is also possible that these exploits might also be easier to <em>discover</em> using AI, leaving the same underlying uncertainty.</p>
+<p>A related <a href="https://defillama.com/research/spotlight/defi-hacks-could-ai-reproduce-today">article by DeFiLlama and Firepan</a> examines whether the share of hacks reproducible using AI has increased. However, it compares 2020-2021 with 2024-2026, making it difficult to determine whether there was an acceleration specifically in 2026.</p>
+<p>We will update this estimate as more evidence becomes available.</p>
+</div>
+</section>
+<section id="ransomware" class="level2">
+<h2 class="anchored" data-anchor-id="ransomware">Ransomware attacks</h2>
+<p>We also examined ransomware attacks using two sources. <a href="http://ransomware.live/">Ransomware.live</a> records victims named on ransomware gangs’ “leak sites,” websites where gangs threaten to publish stolen data to pressure victims into paying. <a href="https://ransomware.comparitech.com/">Comparitech’s Ransomware Intelligence Platform</a> includes only attacks confirmed by another source, such as a victim statement, a data-breach notice, or a news report.</p>
+<div class="argument-row finding-row">
+<section id="ransomware-finding-1" class="level3 explanation">
+<h3 class="anchored" data-anchor-id="ransomware-finding-1">Tentative Finding 1: The number of victims listed on ransomware leak sites has shown little acceleration.</h3>
+</section>
+<div class="figure-column">
+<p><a href="assets/cyber-acceleration/fig31_ransomware_live_per_month.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="assets/cyber-acceleration/fig31_ransomware_live_per_month.png" class="img-fluid" alt="Bar chart of ransomware victims posted on leak sites per month, 2022 to October 2026."></a></p>
+</div>
+</div>
+<div class="argument-row finding-row">
+<section id="ransomware-finding-2" class="level3 explanation">
+<h3 class="anchored" data-anchor-id="ransomware-finding-2">Tentative Finding 2: The number of recorded independently confirmed attacks has not accelerated.</h3>
+<p>This difference could partly reflect delays in disclosure. US state laws require organizations to notify affected individuals of certain data breaches, so disclosure is not always voluntary. However, these notices can take months after an incident to appear. So, the counts for recent quarters may rise as more attacks are disclosed and added to the dataset.</p>
+</section>
+<div class="figure-column">
+<p><a href="assets/cyber-acceleration/fig32_comparitech_ransomware_per_month.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="assets/cyber-acceleration/fig32_comparitech_ransomware_per_month.png" class="img-fluid" alt="Stacked bar chart of confirmed ransomware attacks per month, 2020 to October 2026, split into attacks confirmed by a US breach notice and those confirmed in other ways."></a></p>
+</div>
+</div>
+<div class="argument-row finding-row">
+<section id="ransomware-finding-3" class="level3 explanation">
+<h3 class="anchored" data-anchor-id="ransomware-finding-3">Tentative Finding 3: There is a slight acceleration in the number of hacker groups posting ransomware victims.</h3>
+</section>
+<div class="figure-column">
+<p><a href="assets/cyber-acceleration/fig35_ransomware_live_groups_per_quarter.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="assets/cyber-acceleration/fig35_ransomware_live_groups_per_quarter.png" class="img-fluid" alt="Bar chart of ransomware groups posting victims on leak sites per quarter, 2022 to 2026."></a></p>
+</div>
+</div>
+<div class="argument-row finding-row">
+<section id="ransomware-finding-4" class="level3 explanation">
+<h3 class="anchored" data-anchor-id="ransomware-finding-4">Tentative Finding 4: Evidence of AI use in ransomware negotiations</h3>
+<p>We used Pangram 4.1 to examine possible AI use in publicly available ransomware negotiations from the <a href="https://ransomch.at/">Ransomchat</a> dataset. The dataset contained 276 chats and 12,889 messages involving 31 ransomware hacker groups. We selected timestamped, English-language attacker messages longer than 50 words and excluded templates, which left us with 344 messages.</p>
+<p>Note that our 2026 results are mostly limited to Q1: Ransomchat updates its dataset with a lag, which means that it has little coverage of Q2-Q3 2026. The 21 September 2026 Ransomchat snapshot contained few negotiations after March 2026, and historically, for chats since 2023, the median publication lag was four months, and the mean was five months.</p>
+<p>Also note that the 2021 data point is likely a false positive.</p>
+</section>
+<div class="figure-column">
+<p><a href="assets/cyber-acceleration/pangram_flags_over_time.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="assets/cyber-acceleration/pangram_flags_over_time.png" class="img-fluid" alt="Two bar charts of the share of ransomware negotiation messages flagged as AI-written by Pangram, by year from 2020 to 2026, for attackers and victims."></a></p>
+<p><a href="assets/cyber-acceleration/pangram_flags_2025_2026_quarterly.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="assets/cyber-acceleration/pangram_flags_2025_2026_quarterly.png" class="img-fluid" alt="Two bar charts of the share of ransomware negotiation messages flagged as AI-written by Pangram, by quarter from 2025 to 2026, for attackers and victims."></a></p>
+</div>
+</div>
+<section id="hacker-data" class="level4">
+<h4 class="anchored" data-anchor-id="hacker-data">Hacker data:</h4>
+<p>Some ransomware hackers appear to have started drafting negotiation messages with LLMs in 2025-26. Examples:</p>
+<p class="pg-legend">Pangram labels: <span class="pg-ai">AI-Generated</span> | <span class="pg-assisted">AI-Assisted</span> | <span class="pg-human">Human Written</span></p>
+<div class="quote-table-wrap">
+<table class="quote-table caption-top table">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">Attacker &amp; date</th>
+<th data-quarto-table-cell-role="th">Quote</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Dragonforce, 2025-07-11</td>
+<td>“<span class="pg-ai">I’m sure you’ve been following the news. You know that some people have chosen to settle, even after the incident became public. They placed a high value on data privacy. What would be the consequences if you were to handle it differently? It would be a significant news story. We expect a serious proposal from you.</span>”</td>
+</tr>
+<tr class="even">
+<td>Dragonforce, 2026-03-08. (Note: Contains curly apostrophes and non-breaking hyphens.)</td>
+<td><span class="pg-human">Hello. In the end, we want to get money from you.</span><span class="pg-assisted"> We’ve encrypted your files and also downloaded a large number of them to our own servers. We can give you a list of the files we took, along with 1‑3 small samples from that list. We can also decrypt 1‑3 small files that contain non‑critical information to demonstrate that we can recover all of your data.</span><span class="pg-ai"> If you’d like, we can do all of that, or we can go straight to the payment request. You see a timer counting down the negotiation period. When it expires, if we don’t receive what we want, we will publish the stolen data publicly and delete the decryption tools, making any recovery of your data completely impossible.</span></td>
+</tr>
+<tr class="odd">
+<td>SilentRansomGroup, 2026-03-10</td>
+<td>“<span class="pg-ai">Our business is built on reputation - if a company were to pay us and, for some reason, we broke our promise, word would spread, negatively impacting our future deals. Clearly, that is not in our interest, as it would lead to a loss of trust from clients.</span>”</td>
+</tr>
+<tr class="even">
+<td>SilentRansomGroup, 2026-03-17</td>
+<td>“<span class="pg-ai">We appreciate your offer, but we are unable to accept it at this time. To clarify, We remain open to negotiation and do not consider our initial figure unchangeable. However, given the critical nature of the situation and the value of the data involved, We must emphasize that We do not believe our current ask is unreasonable.</span>”</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="victim-messages" class="level4">
+<h4 class="anchored" data-anchor-id="victim-messages">Victim messages:</h4>
+<p>Victims also used AI assistance in writing negotiation messages. Examples:</p>
+<p class="pg-legend">Pangram labels: <span class="pg-ai">AI-Generated</span> | <span class="pg-assisted">AI-Assisted</span> | <span class="pg-human">Human Written</span></p>
+<div class="quote-table-wrap">
+<table class="quote-table caption-top table">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">Victim &amp; date</th>
+<th data-quarto-table-cell-role="th">Quote</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Akira victim, 2025-03-10</td>
+<td>“<span class="pg-ai">After further internal discussions, our limitations remain significant due to bureaucratic approvals and cryptocurrency transfer restrictions. Nevertheless, in the spirit of progressing towards a mutually acceptable resolution, we can increase our offer slightly to $162,000 USD. We kindly ask for your understanding regarding these economic realities and bureaucratic challenges, including the complexity of transferring funds into cryptocurrency. We remain fully committed to reaching an agreement promptly.</span>”</td>
+</tr>
+<tr class="even">
+<td>Akira victim, 2025-03-21</td>
+<td>“<span class="pg-ai">Thank you for the updated offer. This is really appreciated. We understand your effort to reduce the price, but unfortunately, even 135K$ is still far beyond our financial capacity as I already mentioned. Our final and only possible offer remains 50K$, which we can pay quickly. This is not emotional or strategic, it’s a financial and operational constraint. We can’t give you what we don’t have.</span>”</td>
+</tr>
+<tr class="odd">
+<td>Dragonforce victim, 2026-03-18</td>
+<td>"<span class="pg-ai">We have completed validation of the data and confirmed your ability to decrypt. At this point, we are moving through the internal authorization process required before any payment can be approved. This step involves multiple parties and cannot be expedited beyond certain requirements.</span> [...] <span class="pg-ai">Any early release of the information will disrupt this process and may impact our ability to finalize payment.</span>"</td>
+</tr>
+<tr class="even">
+<td>SilentRansomGroup victim, 2026-03-27</td>
+<td>"<span class="pg-ai">We were on the phone with our representative this morning, but they weren't able to provide any new information yet. As soon as we know more, you'll know as well. Please understand that we're not sitting on this, we're actively pressing them for an answer.</span>"</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="implications" class="level2">
+<h2 class="anchored" data-anchor-id="implications">Implications and future work</h2>
+<p>In this blog, we examined several public datasets for evidence of changes in cyberattack activity. Recorded crypto hacks accelerated in 2026, particularly smaller thefts, though the pattern varies across trackers. More ransomware groups posted victims on leak sites, but victim counts did not accelerate, and independently confirmed attacks did not accelerate. We also found evidence of AI-assisted writing in ransomware negotiations.</p>
+<p>Our evidence suggests that there might have been an acceleration in crypto attacks in 2026, coinciding with improvements in AI’s cyber capabilities. We note possible confounders that may explain part of the observed increase, including changes in detection and reporting.</p>
+<p>Continuing to track AI’s real-world use and impact is important, as Cunningham &amp; Rush (2026) have noted. Researchers should keep on finding, registering, and updating useful data series to inform AI’s real-world impact.</p>
+<p>Aside from that, we also see several promising directions for future research in cyber attack acceleration:</p>
+<ul>
+<li><strong>Human misuse vs rogue AI agents:</strong> Our analysis of ransomware negotiation messages suggests possible AI-assisted drafting, but provides limited evidence about how the underlying attacks were carried out. We suspect these cases are human-directed AI misuse, given links to known ransomware groups. We would like to see future time series analysis that distinguishes human-directed AI use, autonomous agent execution, and rogue behavior in incidents and tracks their prevalence over time.</li>
+<li><strong>AI’s impact on cyber offense vs.&nbsp;defense:</strong> As AI capabilities improve, both attackers and defenders may become more effective. For instance, AI could help attackers exploit smart contracts and develop ransomware, while helping defenders audit code and detect intrusions. Understanding the relative rates of improvement is essential for assessing AI’s net impact on cybersecurity.</li>
+<li><strong>Which models are being used in attacks?</strong> Identifying the models involved in real-world cyberattacks, including whether they are open- or closed-weight, would help us understand how different models contribute to emerging cyber risks.</li>
+<li><strong>Collect and analyze other datasets: Other sources we considered include npm/PyPI attacks, wallet-drainer phishing, bank transfer fraud, phishing emails, and scam conversations. We encourage timely updates to existing datasets, the development of new datasets, and further analyses as more 2026 data becomes available.</strong></li>
+</ul>
+<p><em>Thanks to Alan Chan, Jake Steckler, and Daniel Paleka for feedback.</em></p>
+</section>
+<section id="appendix" class="level2">
+<h2 class="anchored" data-anchor-id="appendix">Appendix</h2>
+<section id="appendix-a" class="level3">
+<h3 class="anchored" data-anchor-id="appendix-a">Appendix A: other crypto hack datasets</h3>
+<p>We explore six other trackers: SlowMist, Comparitech, CertiK, rekt.news, Web3 Is Going Great, and BlockSec. In each analysis, we make a conclusion about acceleration by comparing each tracker’s average for 2026 Q2-Q3 (for BlockSec, 2026 Q2 only) with two benchmarks: its trend leading up to 2026, and its busiest quarter of 2022-25 (its “old peak”).</p>
+<section id="tracker-slowmist" class="level4">
+<h4 class="anchored" data-anchor-id="tracker-slowmist"><a href="https://hacked.slowmist.io/">SlowMist Hacked</a>: reversal of trend (acceleration), but below its old peak</h4>
+<div class="argument-row">
+<div class="explanation">
+<ul>
+<li>A list kept by the blockchain security firm SlowMist of every blockchain security incident it finds, including scams and a few incidents in which nothing was stolen.</li>
+<li>The acceleration came in March-April 2026.</li>
+<li>Caveats: From late 2025, SlowMist more often cited security firms’ monitoring accounts on X, which post when their software spots a likely hack. Such entries rose from about 3 a quarter in 2025 to 25 a quarter in 2026 Q2-Q3, about a third of the roughly 70 extra incidents a quarter; if SlowMist would otherwise have missed these incidents, or if these monitoring accounts used AI to discover attacks, then that part of the rise could reflect discovery rather than more attacks.</li>
+</ul>
+</div>
+<div class="figure-column">
+<p><a href="assets/cyber-acceleration/fig13_tracker_slowmist.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img src="assets/cyber-acceleration/fig13_tracker_slowmist.png" class="img-fluid" alt="Stacked bar chart of SlowMist incidents per quarter, 2022 to 2026, split by reported loss."></a></p>
+</div>
+</div>
+</section>
+<section id="tracker-comparitech" class="level4">
+<h4 class="anchored" data-anchor-id="tracker-comparitech"><a href="https://www.comparitech.com/crypto/biggest-cryptocurrency-heists/">Comparitech crypto heists</a>: acceleration, slightly above its old peak</h4>
+<div class="argument-row">
+<div class="explanation">
+<ul>
+<li>Comparitech compiles its cryptocurrency heist database by searching industry news reports and company announcements worldwide, rather than independently detecting attacks on the blockchain. It includes documented hacks, thefts, flash-loan exploits, and other technical vulnerabilities, but excludes rug pulls, employee theft, and thefts from individuals.</li>
+<li>The acceleration came in April 2026.</li>
+</ul>
+</div>
+<div class="figure-column">
+<p><a href="assets/cyber-acceleration/fig14_tracker_comparitech.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13"><img src="assets/cyber-acceleration/fig14_tracker_comparitech.png" class="img-fluid" alt="Stacked bar chart of Comparitech crypto heists per quarter, 2022 to 2026, split by reported loss."></a></p>
+</div>
+</div>
+</section>
+<section id="tracker-certik" class="level4">
+<h4 class="anchored" data-anchor-id="tracker-certik"><a href="https://www.certik.com/certik-report/dashboard">CertiK incident dashboard</a>: acceleration, above its old peak</h4>
+<div class="argument-row">
+<div class="explanation">
+<ul>
+<li>CertiK tracks cryptocurrency security incidents through its own on-chain monitoring and investigations, supplemented by publicly available information such as project announcements, social media, and news reports.</li>
+<li>The acceleration came in March 2026.</li>
+<li>Caveats: CertiK keeps adding incidents to past months (its count for 2026 Q2 across all categories rose from 194 in July to 222 by 18 October), so recent quarters will probably rise further.</li>
+</ul>
+</div>
+<div class="figure-column">
+<p><a href="assets/cyber-acceleration/fig15_tracker_certik.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14"><img src="assets/cyber-acceleration/fig15_tracker_certik.png" class="img-fluid" alt="Bar chart of CertiK exploit incidents per quarter, 2023 to 2026."></a></p>
+</div>
+</div>
+</section>
+<section id="tracker-rekt" class="level4">
+<h4 class="anchored" data-anchor-id="tracker-rekt"><a href="https://rekt.news/leaderboard/">rekt.news leaderboard</a>: unclear/no obvious acceleration, below its old peak</h4>
+<div class="argument-row">
+<div class="explanation">
+<ul>
+<li>Incidents that the crypto news site rekt.news wrote an article about, mostly large DeFi exploits.</li>
+<li>No clear acceleration in 2026.</li>
+<li>Caveats: editors choose which incidents to cover, almost all of them $1 million or more; its tags rarely say how an attack worked.</li>
+</ul>
+</div>
+<div class="figure-column">
+<p><a href="assets/cyber-acceleration/fig16_tracker_rekt.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15"><img src="assets/cyber-acceleration/fig16_tracker_rekt.png" class="img-fluid" alt="Stacked bar chart of rekt.news incidents per quarter, 2022 to 2026, split by reported loss."></a></p>
+</div>
+</div>
+</section>
+<section id="tracker-w3igg" class="level4">
+<h4 class="anchored" data-anchor-id="tracker-w3igg"><a href="https://www.web3isgoinggreat.com/">Web3 Is Going Great</a>: no acceleration, far below its old peak</h4>
+<div class="argument-row">
+<div class="explanation">
+<ul>
+<li>One editor’s (Molly White’s) selection of notable crypto events; we count the entries tagged “Hack or scam”.</li>
+<li>No acceleration in 2026</li>
+<li>Caveats: it is not meant to be complete, and what gets in depends on what the editor finds newsworthy; the tag mixes hacks with scams, phishing and some court cases.</li>
+</ul>
+</div>
+<div class="figure-column">
+<p><a href="assets/cyber-acceleration/fig18_tracker_web3isgoinggreat.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16"><img src="assets/cyber-acceleration/fig18_tracker_web3isgoinggreat.png" class="img-fluid" alt="Stacked bar chart of Web3 Is Going Great hack-or-scam entries per quarter, 2022 to 2026, split by reported loss."></a></p>
+</div>
+</div>
+</section>
+<section id="tracker-blocksec" class="level4">
+<h4 class="anchored" data-anchor-id="tracker-blocksec"><a href="https://blocksec.com/security-incident">BlockSec security incidents</a>: slight acceleration, slightly above its old peak</h4>
+<div class="argument-row">
+<div class="explanation">
+<ul>
+<li>BlockSec is a blockchain security firm that sells Phalcon, a system that watches blockchain transactions to detect and block attacks. The page says it lists attacks “with losses of over $100K.”</li>
+<li>There is a slight acceleration in 2026.</li>
+<li>Caveats: it publishes with a deliberate delay, and its newest entry is from 24 July 2026, so 2026 Q3 is incomplete and left out of the comparison.</li>
+</ul>
+</div>
+<div class="figure-column">
+<p><a href="assets/cyber-acceleration/fig19_tracker_blocksec.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17"><img src="assets/cyber-acceleration/fig19_tracker_blocksec.png" class="img-fluid" alt="Stacked bar chart of BlockSec incidents per quarter, 2023 to 2026, split by reported loss."></a></p>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="appendix-b" class="level2">
+<h2 class="anchored" data-anchor-id="appendix-b">Appendix B: Pangram messages</h2>
+<p>We have included all of our Pangram results in <a href="https://github.com/jasmineee-li/cyber-attack-acceleration/blob/main/data/processed/attacker_text/pangram_flagged_messages.csv">this CSV file</a>.</p>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Acceleration means any obvious slope increase in 2026, following Cunningham &amp; Rush (2026).<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>This number comes from a subjective estimate accounting for all the evidence in this article.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="mailto:cheryl.wu@yale.edu">
+<p>Email</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://x.com/cherylwoooo">
+<p>X</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://greatdivergence.com">
+<p>Substack</p>
+</a>
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+</body></html>

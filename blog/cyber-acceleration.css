@@ -1,0 +1,442 @@
+/* Layout for "Have we seen an acceleration in cyberattacks?".
+   Based on china-ai-safety.css, with explanations on the left and charts on the right. */
+:root {
+  --note-ink: #1A2744;
+  --note-paper: #FAFAF8;
+  --note-panel: #F5F4F0;
+  --note-line: #E0DDD6;
+  --note-blue: #2B5797;
+  --note-brick: #B04040;
+  --note-teal: #52929A;
+  --note-muted: #5B6770;
+  --note-pair-gap: clamp(1.8rem, 3vw, 3rem);
+  --note-section-gap: 3.7rem;
+  --note-rule: #CFCAC0;
+  --pg-ai: rgba(192, 69, 47, 0.18);
+  --pg-assisted: rgba(214, 158, 46, 0.28);
+}
+
+/* ---------- Page frame (as in the China post) ---------- */
+#quarto-content { padding-top: 2.6rem; }
+#quarto-document-content { color: var(--note-ink); min-width: 0; padding-top: 0; }
+#title-block-header {
+  width: 100%;
+  max-width: none;
+  margin: 0 0 2rem;
+  padding: 0 0 1.4rem;
+  border-bottom: 4px solid var(--note-ink);
+}
+#title-block-header h1, #title-block-header .h1 {
+  width: 100%;
+  max-width: none;
+  color: var(--note-ink);
+  font-size: clamp(2rem, 3vw, 2.7rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+.introduction { width: 100%; max-width: none; margin-bottom: 3rem; }
+p { margin: 0 0 1rem; }
+strong { font-weight: 600; }
+a { text-underline-offset: .17em; }
+
+#quarto-margin-sidebar { align-self: start; padding-top: .6rem; }
+#TOC { font-size: .76rem; line-height: 1.5; }
+#TOC > h2, #TOC > .h2 {
+  color: var(--note-muted);
+  font-size: .68rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-weight: 600;
+  padding: 0;
+  border: 0;
+  margin: 0 0 .75rem;
+}
+#TOC .nav-link { padding-top: .4rem; padding-bottom: .4rem; color: var(--note-muted); }
+#TOC .nav-link.active { color: var(--note-blue); font-weight: 600; border-left-color: var(--note-blue); }
+
+section.level2 { margin: 0 0 var(--note-section-gap); }
+section.level2 > h2, section.level2 > .h2 {
+  width: 100%;
+  max-width: none;
+  color: var(--note-ink);
+  font-size: 1.45rem;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.012em;
+  margin: 0 0 1.55rem;
+  border: 0;
+  border-bottom: 2px solid var(--note-ink);
+  padding: 0 0 1rem;
+}
+
+/* Findings: a small label above each heading and a thin rule below it.
+   Rule weights step down: title 4px, sections 2px, findings 1px. */
+section.level3 { margin: 2.6rem 0 0; }
+section.level3 > h3, section.level3 > .h3 {
+  color: var(--note-ink);
+  font-size: 1.16rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0 0 1.1rem;
+  padding-bottom: .65rem;
+  border-bottom: 1px solid var(--note-rule);
+}
+.finding-num {
+  display: block;
+  font-family: "Source Sans 3", "Segoe UI", sans-serif;
+  color: var(--note-brick);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-bottom: .3rem;
+}
+
+/* ---------- Text left, chart right ---------- */
+.argument-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: var(--note-pair-gap);
+  align-items: start;
+}
+.argument-row + .argument-row { margin-top: 2rem; }
+
+/* Tentative findings: the title opens the left column, beside the chart, and a thin rule
+   separates one finding from the next. */
+.argument-row.finding-row {
+  margin-top: 2.6rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--note-rule);
+}
+.finding-row section.level3 { margin: 0; }
+.finding-row h3, .finding-row section.level3 > h3 {
+  color: var(--note-ink);
+  font-size: 1.12rem;
+  font-weight: 600;
+  line-height: 1.45;
+  margin: 0 0 1rem;
+  padding: 0;
+  border: 0;
+}
+.explanation, .figure-column { min-width: 0; }
+.explanation > :last-child, .explanation > :last-child > :last-child { margin-bottom: 0; }
+.figure-column { position: sticky; top: 1.5rem; }
+.figure-column .quarto-figure + .quarto-figure { margin-top: 1.6rem; }
+
+/* Figures, in the column or full width. */
+.figure-column .quarto-figure, .wide-figure .quarto-figure, .figure-column figure, .wide-figure figure { margin: 0; }
+/* Multiply blends the charts' white background into the cream page. The containers need the
+   page colour themselves, because the sticky column starts its own stacking context. */
+.figure-column img, .wide-figure img { display: block; width: 100%; height: auto; mix-blend-mode: multiply; }
+.figure-column, .wide-figure { background: var(--note-paper); }
+.figure-column figcaption, .wide-figure figcaption {
+  color: var(--note-muted);
+  font-size: .77rem;
+  line-height: 1.55;
+  margin-top: .75rem;
+  padding-top: .75rem;
+  border-top: 1px solid var(--note-line);
+  text-align: left;
+}
+.figure-column figcaption p, .wide-figure figcaption p { margin: 0; }
+.wide-figure { margin: 2rem 0; }
+
+/* Charts without captions sit in their own paragraphs. */
+.figure-column > p, .wide-figure > p, .solo-figure > p { margin: 0; }
+.figure-column > p + p { margin-top: 1.4rem; }
+.wide-figure > p + p { margin-top: 2rem; }
+
+/* A note printed under a chart, styled like a caption. */
+.fig-note {
+  color: var(--note-muted);
+  font-size: .77rem;
+  line-height: 1.55;
+  margin-top: .75rem;
+  padding-top: .75rem;
+  border-top: 1px solid var(--note-line);
+}
+.fig-note p { margin: 0; }
+
+/* A finding with a chart but no text of its own. */
+.solo-figure { max-width: 640px; margin: 0; background: var(--note-paper); }
+.solo-figure img { display: block; width: 100%; height: auto; mix-blend-mode: multiply; }
+
+/* Appendix A tracker headings, with a thin rule between trackers as between findings. */
+section.level4 { margin: 2.2rem 0 0; }
+#appendix-a section.level4 { padding-top: 1.4rem; border-top: 1px solid var(--note-rule); }
+section.level4 > h4 {
+  font-size: 1.02rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--note-ink);
+  margin: 0 0 .9rem;
+}
+section.level4 > h4 a { color: var(--note-ink); font-weight: 600; text-decoration-color: var(--note-rule); }
+section.level4 > h4 a:hover { color: var(--note-blue); text-decoration-color: currentColor; }
+
+/* Appendix tracker names are links; keep them heading-coloured. */
+section.level3 > h3 a { color: var(--note-ink); text-decoration-color: var(--note-line); }
+section.level3 > h3 a:hover { color: var(--note-blue); text-decoration-color: currentColor; }
+
+/* ---------- Panels ---------- */
+.panel {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 1.8rem 0 0;
+  padding: 1.35rem 1.55rem;
+  background: var(--note-panel);
+  border-radius: 6px;
+  font-size: .92rem;
+  line-height: 1.65;
+}
+.panel > :last-child { margin-bottom: 0; }
+.panel-heading {
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--note-muted);
+  margin-bottom: .7rem;
+}
+.panel-heading p { margin: 0; }
+
+/* Key findings in the introduction. */
+.key-findings { margin: .4rem 0 1.4rem; }
+.key-findings ul, .key-findings ol { margin: 0; padding-left: 1.3rem; }
+.key-findings li { margin-bottom: .55rem; padding-left: .2rem; }
+.key-findings li:last-child { margin-bottom: 0; }
+.key-findings li::marker { color: var(--note-brick); font-weight: 600; }
+.key-findings .panel-footer {
+  border-top: 1px solid var(--note-line);
+  padding-top: .9rem;
+  color: var(--note-ink);
+}
+
+/* Data-source notes. */
+.source-note {
+  border-left: 3px solid var(--note-blue);
+  padding: .15rem 0 .15rem 1.1rem;
+  margin: 0 0 1rem;
+  font-size: .95rem;
+}
+.source-note > :last-child { margin-bottom: 0; }
+.source-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem;
+  margin: 0 0 1rem;
+}
+.source-card {
+  background: var(--note-panel);
+  border-radius: 6px;
+  padding: 1rem 1.2rem;
+  font-size: .9rem;
+  line-height: 1.6;
+}
+.source-card > :last-child { margin-bottom: 0; }
+.source-label {
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--note-blue);
+  margin-bottom: .35rem;
+}
+.source-label p { margin: 0; }
+
+/* Two-mechanism list in crypto finding 2. */
+.mechanisms { margin: 0 0 1rem; padding-left: 1.3rem; }
+.mechanisms li { margin-bottom: .45rem; }
+
+/* ---------- Ransomware negotiation quotes ---------- */
+.pg-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .45rem .9rem;
+  font-size: .8rem;
+  color: var(--note-muted);
+  margin: 0 0 1rem;
+}
+.pg-legend .pg-ai, .pg-legend .pg-assisted, .pg-legend .pg-human {
+  padding: .1rem .5rem;
+  border-radius: 3px;
+  color: var(--note-ink);
+}
+.pg-legend .pg-human { border: 1px solid var(--note-line); }
+.quote-group-heading {
+  font-family: "Lora", "Georgia", serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--note-ink);
+  margin: 1.8rem 0 .4rem;
+}
+.quote-group-heading p { margin: 0; }
+.quote-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem;
+  margin: 0 0 1rem;
+}
+.quote-grid .quote-card {
+  margin: 0;
+  background: #fff;
+  border: 1px solid var(--note-line);
+  border-radius: 6px;
+  padding: 1.05rem 1.2rem .95rem;
+  display: flex;
+  flex-direction: column;
+}
+.quote-card blockquote {
+  margin: 0 0 .8rem;
+  padding: 0;
+  border: 0;
+  font-family: "Lora", "Georgia", serif;
+  font-size: .88rem;
+  line-height: 1.75;
+  color: var(--note-ink);
+}
+.pg-ai { background: var(--pg-ai); }
+.pg-assisted { background: var(--pg-assisted); }
+.quote-card .pg-ai, .quote-card .pg-assisted {
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding: .05rem 0;
+}
+.quote-gap { color: var(--note-muted); }
+.quote-card figcaption {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: .8rem;
+  font-size: .76rem;
+  border-top: 1px solid var(--note-line);
+  padding-top: .55rem;
+}
+.quote-who { font-weight: 600; color: var(--note-ink); }
+.quote-date { color: var(--note-muted); white-space: nowrap; }
+.quote-note { font-size: .74rem; color: var(--note-muted); margin: .45rem 0 0; font-style: italic; }
+
+/* Quote tables: who and when on the left, the quote on the right. */
+.quote-table-wrap { overflow-x: auto; margin: 0 0 1.6rem; }
+.quote-table { width: 100%; border-collapse: collapse; font-size: .9rem; line-height: 1.65; }
+.quote-table th {
+  text-align: left;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--note-muted);
+  border-bottom: 1px solid var(--note-rule);  /* thin: thick rules mark sections */
+  padding: .4rem .8rem .5rem 0;
+}
+.quote-table td { vertical-align: top; border-bottom: 1px solid var(--note-line); padding: .8rem .8rem .8rem 0; }
+.quote-table td:first-child { width: 24%; font-weight: 600; font-size: .82rem; color: var(--note-ink); }
+.quote-table td:last-child { font-family: "Lora", "Georgia", serif; font-size: .88rem; color: var(--note-ink); }
+.quote-table .pg-ai, .quote-table .pg-assisted {
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding: .05rem 0;
+}
+
+/* ---------- Future work ---------- */
+.directions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem;
+  margin: .4rem 0 1.6rem;
+}
+.direction {
+  background: var(--note-panel);
+  border-radius: 6px;
+  padding: 1.05rem 1.2rem;
+  font-size: .9rem;
+  line-height: 1.62;
+}
+.direction > :last-child { margin-bottom: 0; }
+.direction-heading {
+  font-family: "Lora", "Georgia", serif;
+  font-weight: 600;
+  font-size: .98rem;
+  color: var(--note-ink);
+  margin-bottom: .4rem;
+}
+.direction-heading p { margin: 0; }
+.thanks {
+  color: var(--note-muted);
+  font-size: .9rem;
+  border-top: 1px solid var(--note-line);
+  padding-top: 1.1rem;
+}
+
+/* ---------- Appendix trackers ---------- */
+.verdict {
+  display: inline-block;
+  font-size: .74rem;
+  font-weight: 600;
+  line-height: 1.4;
+  padding: .22rem .6rem;
+  border-radius: 999px;
+  margin: 0 0 .9rem;
+  background: var(--note-panel);
+  color: var(--note-muted);
+  border: 1px solid var(--note-line);
+}
+.verdict.yes { background: rgba(176, 64, 64, .1); color: var(--note-brick); border-color: rgba(176, 64, 64, .25); }
+.verdict.slight { background: rgba(82, 146, 154, .12); color: #39707A; border-color: rgba(82, 146, 154, .3); }
+.tracker-notes { padding-left: 1.2rem; margin: 0; font-size: .95rem; }
+.tracker-notes li { margin-bottom: .5rem; }
+
+/* ---------- Footer area ---------- */
+#quarto-appendix {
+  width: 100%;
+  max-width: none;
+  background: var(--note-paper);
+  color: var(--note-muted);
+  border-top: 1px solid var(--note-line);
+  padding: 1.4rem 0 2.5rem;
+}
+#footnotes { width: 100%; max-width: none; font-size: .8rem; line-height: 1.65; }
+#footnotes h2, #footnotes .h2 { font-size: 1rem; border: 0; padding-top: 0; margin-bottom: .9rem; }
+
+/* ---------- Narrower screens ---------- */
+@media (max-width: 1199.98px) {
+  #quarto-content { display: flex; flex-direction: column; gap: 0; padding: 1.5rem 24px 0; }
+  #quarto-margin-sidebar {
+    display: block !important;
+    position: static;
+    width: 100%;
+    max-width: none;
+    max-height: none;
+    padding: 0 0 1.4rem;
+    order: 0;
+    overflow: visible;
+  }
+  #quarto-document-content { order: 1; width: 100%; max-width: none; margin: 0; padding: 0; }
+  #TOC { border-bottom: 1px solid var(--note-line); padding-bottom: 1rem; }
+  #TOC > ul { display: grid; grid-template-columns: 1fr 1fr; gap: .25rem 1rem; }
+  #TOC .nav-link { border-left: 0; padding-left: 0; }
+  .argument-row { gap: 1.5rem; }
+}
+@media (max-width: 799.98px) {
+  #quarto-content { padding-left: 18px; padding-right: 18px; }
+  #title-block-header h1, #title-block-header .h1 { font-size: 1.95rem; }
+  section.level2 > h2, section.level2 > .h2 { font-size: 1.32rem; }
+  .argument-row, .source-grid, .quote-grid, .directions-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+  .figure-column { position: static; }
+  .panel { padding: 1.1rem; }
+}
+@media print {
+  #quarto-content { display: block; padding: 0; }
+  #quarto-document-content { width: 100%; margin: 0; }
+  #quarto-margin-sidebar { display: none !important; }
+  .figure-column { position: static; }
+  .panel, .source-card, .direction, .pg-ai, .pg-assisted {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  figure, .quote-card, .direction { break-inside: avoid; }
+}
