@@ -381,61 +381,20 @@ img {
 }
 
 .contact-intro {
-  margin-bottom: 32px;
+  margin-bottom: 12px;
   color: #555;
 }
 
-#contact-form {
-  max-width: 560px;
-}
-
-.form-group {
-  margin-bottom: 20px;
-}
-
-.form-group label {
-  display: block;
+.contact-email {
+  font-family: 'Lora', serif;
+  font-size: 1.25rem;
   font-weight: 600;
-  margin-bottom: 6px;
-  font-size: 0.9rem;
-  color: #444;
+  border-bottom: 1px solid rgba(43, 87, 151, 0.35);
+  transition: color 0.2s, border-color 0.2s;
 }
 
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 10px 14px;
-  border: 1px solid #d0cdc6;
-  border-radius: 4px;
-  font-size: 1rem;
-  font-family: inherit;
-  background: #fff;
-  color: #3a3a3a;
-  transition: border-color 0.2s;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: #4a7ab5;
-  box-shadow: 0 0 0 3px rgba(43, 87, 151, 0.15);
-}
-
-.form-group textarea {
-  resize: vertical;
-}
-
-.form-status {
-  margin-top: 16px;
-  font-size: 0.9rem;
-}
-
-.form-status.success {
-  color: #2b5797;
-}
-
-.form-status.error {
-  color: #b04040;
+.contact-email:hover {
+  border-bottom-color: #1a2744;
 }
 
 /* ========== Footer ========== */
